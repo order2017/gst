@@ -4,7 +4,7 @@
 
 <div class="admin-content-body">
     <div class="am-cf am-padding am-padding-bottom-0">
-        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">文章列表</strong></div>
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">类型列表</strong></div>
     </div>
 
     <hr>
@@ -16,27 +16,6 @@
                     <a href="{{ url('/admin/article-insert') }}" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</a>
                     <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
                 </div>
-            </div>
-        </div>
-
-        <div class="am-u-sm-12 am-u-md-3">
-            <div class="am-form-group">
-                <select data-am-selected="{btnSize: 'sm'}">
-                    <option value="option1">所有类别</option>
-                    <option value="option2">商业招商</option>
-                    <option value="option3">商业转让</option>
-                    <option value="option4">商业拓展</option>
-                    <option value="option5">商业买卖</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="am-u-sm-12 am-u-md-3">
-            <div class="am-input-group am-input-group-sm">
-                <input type="text" class="am-form-field">
-                <span class="am-input-group-btn">
-                <button class="am-btn am-btn-default" type="button">搜索</button>
-                </span>
             </div>
         </div>
     </div>
