@@ -18,4 +18,10 @@ class ArticleController extends Controller
         return view('admin.article-insert');
 
     }
+
+    public function articleInsertStore(Request $request) {
+
+        dd($request->all());
+
+    }
 }

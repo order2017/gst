@@ -14,7 +14,7 @@
         <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
 
             <form class="am-form am-form-horizontal" data-am-validator>
-
+                {{ csrf_field() }}
                 <fieldset>
                 <div class="am-form-group">
                     <label for="article-title" class="am-u-sm-3 am-form-label">标题：</label>

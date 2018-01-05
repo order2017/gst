@@ -36,11 +36,13 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function (){
         Route::get('/article-list', 'ArticleController@index');
         // 文章添加
         Route::get('/article-insert', 'ArticleController@articleInsert');
+        Route::post('/article-insert', 'ArticleController@articleInsertStore');
 
         // 类别列表
         Route::get('/type-list', 'TypeController@articleTypeList');
         // 类别添加
         Route::get('/type-insert', 'TypeController@articleTypeInsert');
+        Route::post('/type-insert', 'TypeController@articleTypeInsertStore');
 
         // 用户退出
         Route::get('/logout', 'LoginController@logout');
