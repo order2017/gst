@@ -17,20 +17,34 @@ Route::get('/', 'Mobile\IndexController@index');
 
 
 // 后台
-Route::prefix('admin')->get('/', 'Admin\LoginController@login');
-Route::prefix('admin')->get('/login', 'Admin\LoginController@login');
+Route::group(['prefix' => 'admin','namespace' => 'Admin'],function (){
 
+    // 用户登录
+    Route::get('/', 'LoginController@login');
+    Route::get('/login', 'LoginController@login');
+    Route::post('/login', 'LoginController@loginStore');
 
+    Route::group(['middleware' => 'admin.login'],function (){
 
-Route::prefix('admin')->get('/index', 'Admin\IndexController@index');
+        // 后台首页
+        Route::get('/index', 'IndexController@index');
 
-Route::prefix('admin')->get('/user-list', 'Admin\UserController@index');
+        // 用户列表
+        Route::get('/user-list', 'UserController@index');
 
+        // 文章列表
+        Route::get('/article-list', 'ArticleController@index');
+        // 文章添加
+        Route::get('/article-insert', 'ArticleController@articleInsert');
 
-Route::prefix('admin')->get('/article-list', 'Admin\ArticleController@index');
+        // 类别列表
+        Route::get('/type-list', 'TypeController@articleTypeList');
+        // 类别添加
+        Route::get('/type-insert', 'TypeController@articleTypeInsert');
 
-Route::prefix('admin')->get('/article-insert', 'Admin\ArticleController@articleInsert');
+        // 用户退出
+        Route::get('/logout', 'LoginController@logout');
 
+    });
 
-Route::prefix('admin')->get('/type-list', 'Admin\TypeController@articleTypeList');
-Route::prefix('admin')->get('/type-insert', 'Admin\TypeController@articleTypeInsert');
+});
