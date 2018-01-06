@@ -14,6 +14,9 @@
 // 手机
 Route::get('/', 'Mobile\IndexController@index');
 
+Route::get('/article-list', 'Mobile\ArticleController@index');
+Route::get('/article-details', 'Mobile\ArticleController@details');
+
 
 
 // 后台
