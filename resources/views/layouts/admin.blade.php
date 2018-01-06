@@ -97,6 +97,7 @@
 <script src="{{ url('assets/js/jquery.min.js') }}"></script>
 <script src="{{ url('assets/js/amazeui.min.js') }}"></script>
 <script src="{{ url('assets/js/app.js') }}"></script>
+<script src="{{ url('assets/layer/layer.js') }}"></script>
 @yield('script')
 </body>
 </html>

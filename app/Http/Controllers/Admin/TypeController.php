@@ -57,4 +57,16 @@ class TypeController extends Controller
         return redirect('/admin/type-list');
 
     }
+
+    public function articleTypeInsertUpdate(Request $request) {
+
+        dd($request->all());
+
+    }
+
+    public function articleTypeInsertUpdateStore(Request $request) {
+
+        dd($request->all());
+
+    }
 }

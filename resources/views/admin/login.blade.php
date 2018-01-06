@@ -33,7 +33,7 @@
 </div>
 <div class="am-g">
     <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
-        <form method="post" class="am-form" data-am-validator>
+        <form method="post" action="{{ url('/admin/login') }}" class="am-form" data-am-validator>
             {{ csrf_field() }}
             <label for="username">用户名:</label>
             <input type="text" name="user_name" id="username" placeholder="输入用户名" required>

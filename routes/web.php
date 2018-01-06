@@ -44,6 +44,10 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function (){
         Route::get('/type-insert', 'TypeController@articleTypeInsert');
         Route::post('/type-insert', 'TypeController@articleTypeInsertStore');
 
+        // 类别更新
+        Route::get('/type-update', 'TypeController@articleTypeInsertUpdate');
+        Route::post('/type-update', 'TypeController@articleTypeInsertUpdateStore');
+
         // 用户退出
         Route::get('/logout', 'LoginController@logout');
 

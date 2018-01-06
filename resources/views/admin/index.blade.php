@@ -88,3 +88,11 @@
 </div>
 
 @endsection
+
+@section('script')
+    @if(Session::has('message'))
+        @if(Session::get('message')==1)
+            <script>layer.msg('登录成功！', {icon: 6}); </script>
+        @endif
+    @endif
+@endsection
