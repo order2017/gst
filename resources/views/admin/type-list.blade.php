@@ -13,7 +13,7 @@
         <div class="am-u-sm-12 am-u-md-6">
             <div class="am-btn-toolbar">
                 <div class="am-btn-group am-btn-group-xs">
-                    <a href="{{ url('/admin/article-insert') }}" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</a>
+                    <a href="{{ url('/admin/type-insert') }}" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</a>
                     <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
                 </div>
             </div>
@@ -34,16 +34,16 @@
                     <tr>
                         <td><input type="checkbox" /></td>
                         <td>{{ $list->type_id }}</td>
-                        <td><a href="#">{{ $list->type_name }}</a></td>
+                        <td><a href="javascript:;">{{ $list->type_name }}</a></td>
                         <?php $arr=explode(',',$list->type_path); $tot=count($arr)-2; ?>
                         <td>{{str_repeat("|===",$tot)}}{{$list->type_name}}</td>
                         <td class="am-hide-sm-only"><a href="/admin/type-insert?type_pid={{ $list->type_id }}&type_path={{ $list->type_path }}{{ $list->type_id }}">添加二级子类</a></td>
-                        <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                        <td class="am-hide-sm-only">{{ $list->updated_at }}</td>
                         <td>
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
-                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 更新</button>
-                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                    <a  href="{{ url('/admin/type-update?type_id='.$list->type_id.'&type_name='.$list->type_name) }}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 更新</a>
+                                    <a href="javascript:void(0);" onclick="del({{ $list->type_id }})" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</a>
                                 </div>
                             </div>
                         </td>
@@ -52,16 +52,16 @@
                         <tr>
                             <td><input type="checkbox" /></td>
                             <td>{{ $line->type_id }}</td>
-                            <td><a href="#">{{ $line->type_name }}</a></td>
+                            <td><a href="javascript:;">{{ $line->type_name }}</a></td>
                             <?php $arr=explode(',',$line->type_path); $tot=count($arr)-2; ?>
                             <td>{{str_repeat("|===",$tot)}}{{$line->type_name}}</td>
                             <td class="am-hide-sm-only"><a href="/admin/type-insert?type_pid={{ $line->type_id }}&type_path={{ $line->type_path }}{{ $line->type_id }}">添加三级子类</a></td>
-                            <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                            <td class="am-hide-sm-only">{{ $line->updated_at }}</td>
                             <td>
                                 <div class="am-btn-toolbar">
                                     <div class="am-btn-group am-btn-group-xs">
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 更新 </button>
-                                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                        <a href="{{ url('/admin/type-update?type_id='.$line->type_id.'&type_name='.$line->type_name) }}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 更新 </a>
+                                        <a href="javascript:void(0);" onclick="del({{ $line->type_id }})" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</a>
                                     </div>
                                 </div>
                             </td>
@@ -70,16 +70,16 @@
                             <tr>
                                 <td><input type="checkbox" /></td>
                                 <td>{{ $san->type_id }}</td>
-                                <td><a href="#">{{ $san->type_name }}</a></td>
+                                <td><a href="javascript:;">{{ $san->type_name }}</a></td>
                                 <?php $arr=explode(',',$san->type_path); $tot=count($arr)-2; ?>
                                 <td>{{str_repeat("|===",$tot)}}{{$san->type_name}}</td>
                                 <td class="am-hide-sm-only"></td>
-                                <td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
+                                <td class="am-hide-sm-only">{{ $san->updated_at }}</td>
                                 <td>
                                     <div class="am-btn-toolbar">
                                         <div class="am-btn-group am-btn-group-xs">
-                                            <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 更新 </button>
-                                            <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                            <a href="{{ url('/admin/type-update?type_id='.$san->type_id.'&type_name='.$san->type_name) }}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 更新 </a>
+                                            <a href="javascript:void(0);" onclick="del({{ $san->type_id }})" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</a>
                                         </div>
                                     </div>
                                 </td>
@@ -89,7 +89,8 @@
                     @endforeach
                     </tbody>
                 </table>
-                <div class="am-cf">
+
+                {{--<div class="am-cf">
                     共 15 条记录
                     <div class="am-fr">
                         <ul class="am-pagination">
@@ -102,11 +103,43 @@
                             <li><a href="#">»</a></li>
                         </ul>
                     </div>
+                </div>--}}
+
+                <div class="am-cf">
+                    <div class="am-fr">
+                        {{ $type->links() }}
+                    </div>
                 </div>
+
             </form>
         </div>
 
     </div>
 </div>
 
+@endsection
+
+@section('script')
+    @if(Session::has('message'))
+        @if(Session::get('message')==1)
+            <script>layer.msg('更新成功！', {icon: 6}); </script>
+        @endif
+    @endif
+
+    <script type="text/javascript">
+        function del(id) {
+            layer.msg('您确定要删除吗？', {
+                time: 0
+                ,btn: ['删除', '取消']
+                ,yes: function(index){
+                    layer.close(index);
+                    $.post('/admin/type-delete/'+id,{'_token':'{{ csrf_token() }}','_method':'get'},function (data) {
+                        if (data==1){
+                            window.location.reload();
+                        }
+                    });
+                }
+            });
+        }
+    </script>
 @endsection

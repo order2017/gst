@@ -51,6 +51,9 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function (){
         Route::get('/type-update', 'TypeController@articleTypeInsertUpdate');
         Route::post('/type-update', 'TypeController@articleTypeInsertUpdateStore');
 
+        // 类别删除
+        Route::get('/type-delete/{type_id}','TypeController@articleTypeDelete');
+
         // 用户退出
         Route::get('/logout', 'LoginController@logout');
 
