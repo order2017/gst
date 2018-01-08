@@ -24,9 +24,14 @@
                 </div>
 
                 <div class="am-form-group">
-                    <label for="article-picture" class="am-u-sm-3 am-form-label">封面图片：</label>
+                    <label class="am-u-sm-3 am-form-label">封面图片：</label>
                     <div class="am-u-sm-9">
-                        <input type="text" id="article-title" name="article_picture" placeholder="封面图片" required>
+                        <div class="am-form-group am-form-file">
+                            <button type="button" class="am-btn am-btn-danger am-btn-sm">
+                                <i class="am-icon-cloud-upload"></i> 选择封面图片</button>
+                            <input id="doc-form-file" type="file" name="article_picture" multiple>
+                        </div>
+                        <div id="file-list"></div>
                     </div>
                 </div>
 
@@ -83,4 +88,20 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+
+    <script>
+        $(function() {
+            $('#doc-form-file').on('change', function() {
+                var fileNames = '';
+                $.each(this.files, function() {
+                    fileNames += '<span class="am-badge">' + this.name + '</span> ';
+                });
+                $('#file-list').html(fileNames);
+            });
+        });
+    </script>
+
 @endsection
