@@ -104,4 +104,10 @@
         });
     </script>
 
+    @if(Session::has('message'))
+        @if(Session::get('message')==0)
+            <script>layer.msg('插入失败！', {icon: 5}); </script>
+        @endif
+    @endif
+
 @endsection

@@ -16,7 +16,9 @@ class Article extends Model
     protected $fillable = [
         'article_name',
         'article_contact',
+        'article_picture',
         'article_tel',
+        'article_qq',
         'article_type',
         'article_content',
     ];
@@ -27,6 +29,6 @@ class Article extends Model
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+
     ];
 }
