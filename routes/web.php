@@ -41,6 +41,13 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function (){
         Route::get('/article-insert', 'ArticleController@articleInsert');
         Route::post('/article-insert', 'ArticleController@articleInsertStore');
 
+        // 文章更新
+        Route::get('/article-update/{article_id}', 'ArticleController@articleUpdate');
+        Route::post('/article-update', 'ArticleController@articleUpdateStore');
+
+        // 文章删除
+        Route::get('/article-delete/{article_id}', 'ArticleController@articleDelete');
+
         // 类别列表
         Route::get('/type-list', 'TypeController@articleTypeList');
         // 类别添加

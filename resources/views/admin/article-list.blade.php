@@ -47,7 +47,14 @@
                 <table class="am-table am-table-striped am-table-hover table-main">
                     <thead>
                     <tr>
-                        <th class="table-check"><input type="checkbox" /></th><th class="table-id">ID</th><th class="table-title">标题</th><th class="table-type">类别</th><th class="table-author am-hide-sm-only">作者</th><th class="table-date am-hide-sm-only">修改日期</th><th class="table-set">操作</th>
+                        <th class="table-check"><input type="checkbox" /></th>
+                        <th class="table-id">ID</th>
+                        <th class="table-title">图片</th>
+                        <th class="table-title">标题</th>
+                        <th class="table-type">类别</th>
+                        <th class="table-author am-hide-sm-only">作者</th>
+                        <th class="table-date am-hide-sm-only">修改日期</th>
+                        <th class="table-set">操作</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -55,6 +62,7 @@
                     <tr>
                         <td><input type="checkbox" /></td>
                         <td>{{ $list->article_id }}</td>
+                        <td><img src="{{ asset('/uploads/'.$list->article_picture) }}" alt="" width="60px" height="40px"></td>
                         <td><a href="#">{{ $list->article_name }}</a></td>
                         <td>default</td>
                         <td class="am-hide-sm-only">测试1号</td>
@@ -62,8 +70,8 @@
                         <td>
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
-                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                    <a href="{{ url('/admin/article-update',['article_id'=>$list->article_id]) }}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
+                                    <a href="javascript:;" onclick="del({{ $list->article_id }})" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</a>
                                 </div>
                             </div>
                         </td>
@@ -102,5 +110,22 @@
             <script>layer.msg('插入成功！', {icon: 6}); </script>
         @endif
     @endif
+
+    <script type="text/javascript">
+        function del(id) {
+            layer.msg('您确定要删除吗？', {
+                time: 0
+                ,btn: ['删除', '取消']
+                ,yes: function(index){
+                    layer.close(index);
+                    $.post('/admin/article-delete/'+id,{'_token':'{{ csrf_token() }}','_method':'get'},function (data) {
+                        if (data==1){
+                            window.location.reload();
+                        }
+                    });
+                }
+            });
+        }
+    </script>
 
 @endsection
