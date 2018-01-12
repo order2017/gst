@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Article;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class ArticleController extends Controller
 {
@@ -22,8 +23,20 @@ class ArticleController extends Controller
      */
     public function articleInsert() {
 
-        return view('admin.article-insert');
+        $data = DB::select("select article_types.*,concat(type_pid,type_id) p from article_types order by p");
 
+        foreach ($data as $key => $value) {
+
+            $arr=explode(',', $value->type_path);
+
+            $size=count($arr);
+
+            $value->size=$size-2;
+
+            $value->html=str_repeat('|----', $size-2).$value->type_name;
+        }
+
+        return view('admin.article-insert',['data'=>$data]);
     }
 
     /**
