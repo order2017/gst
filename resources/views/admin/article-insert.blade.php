@@ -27,11 +27,9 @@
                     <label class="am-u-sm-3 am-form-label">封面图片：</label>
                     <div class="am-u-sm-9">
                         <div class="am-form-group am-form-file">
-                            <button type="button" class="am-btn am-btn-danger am-btn-sm">
-                                <i class="am-icon-cloud-upload"></i> 选择封面图片</button>
-                            <input id="doc-form-file" type="file" name="article_picture" multiple>
+                            <img id="article_picture" src="{{ asset('/uploads/gst_logo.png') }}" class="am-img-thumbnail" style="height: 130px">
+                            <input name="article_picture" id="file" type="file" multiple onchange="imgPreview(this,'article_picture')">
                         </div>
-                        <div id="file-list"></div>
                     </div>
                 </div>
 
@@ -98,15 +96,30 @@
 @section('script')
 
     <script>
-        $(function() {
-            $('#doc-form-file').on('change', function() {
-                var fileNames = '';
-                $.each(this.files, function() {
-                    fileNames += '<span class="am-badge">' + this.name + '</span> ';
-                });
-                $('#file-list').html(fileNames);
-            });
-        });
+        function imgPreview(fileDom,src){
+
+            if (window.FileReader) {
+                var reader = new FileReader();
+            } else {
+                alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+            }
+
+            var file = fileDom.files[0];
+            var imageType = /^image\//;
+
+            if (!imageType.test(file.type)) {
+                alert("请选择图片！");
+                return;
+            }
+
+            reader.onload = function(e) {
+
+                var img = document.getElementById(src);
+
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
     </script>
 
     @if(Session::has('message'))

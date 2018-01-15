@@ -95,12 +95,15 @@ class ArticleController extends Controller
      */
     public function ArticleUpdateStore(Request $request) {
 
-
         if (is_file($file = $request->file('article_picture'))) {
 
             $filename = md5(time()).'.'.$file->getClientOriginalExtension();
 
             $file->move(public_path('uploads'),$filename);
+
+            $data = Article::find($request->get('article_id'));
+
+            unlink(public_path('uploads').'/'.$data['article_picture']);
 
             if (Article::where('article_id',$request->get('article_id'))->update(array_merge($request->except(['article_picture','_token']),['article_picture'=>$filename]))){
 
