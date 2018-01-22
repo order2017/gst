@@ -75,7 +75,7 @@
                 <div class="am-form-group">
                     <label for="article-intro" class="am-u-sm-3 am-form-label">内容</label>
                     <div class="am-u-sm-9">
-                        <textarea name="article_content" rows="10" minlength="10" maxlength="100" id="article-intro" placeholder="输入内容"></textarea>
+                        <textarea name="article_content" rows="10" id="article-intro" placeholder="输入内容"></textarea>
                     </div>
                 </div>
 

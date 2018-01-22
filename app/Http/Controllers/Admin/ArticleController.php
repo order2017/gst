@@ -23,7 +23,7 @@ class ArticleController extends Controller
      */
     public function articleInsert() {
 
-        $data = DB::select("select article_types.*,concat(type_pid,type_id) p from article_types order by p");
+        $data = DB::select("select article_types.*,concat(type_path,type_id) p from article_types order by p");
 
         foreach ($data as $key => $value) {
 

@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('style')
+    <style type="text/css">
+        .am-table-striped>tbody>tr:nth-child(odd)>td, .am-table-striped>tbody>tr:nth-child(odd)>th {
+            background:none;
+        }
+    </style>
+@endsection
+
 @section('content')
 
 <div class="admin-content-body">
@@ -52,7 +60,7 @@
                             <td><a href="javascript:;">{{ $line->type_name }}</a></td>
                             <?php $arr=explode(',',$line->type_path); $tot=count($arr)-2; ?>
                             <td>{{str_repeat("|===",$tot)}}{{$line->type_name}}</td>
-                            <td class="am-hide-sm-only"><a href="/admin/type-insert?type_pid={{ $line->type_id }}&type_path={{ $line->type_path }}{{ $line->type_id }}">添加三级子类</a></td>
+                            <td class="am-hide-sm-only"></td>
                             <td class="am-hide-sm-only">{{ $line->updated_at }}</td>
                             <td>
                                 <div class="am-btn-toolbar">
@@ -63,24 +71,6 @@
                                 </div>
                             </td>
                         </tr>
-                        @foreach($line->parent as $san)
-                            <tr>
-                                <td>{{ $san->type_id }}</td>
-                                <td><a href="javascript:;">{{ $san->type_name }}</a></td>
-                                <?php $arr=explode(',',$san->type_path); $tot=count($arr)-2; ?>
-                                <td>{{str_repeat("|===",$tot)}}{{$san->type_name}}</td>
-                                <td class="am-hide-sm-only"></td>
-                                <td class="am-hide-sm-only">{{ $san->updated_at }}</td>
-                                <td>
-                                    <div class="am-btn-toolbar">
-                                        <div class="am-btn-group am-btn-group-xs">
-                                            <a href="{{ url('/admin/type-update?type_id='.$san->type_id.'&type_name='.$san->type_name) }}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 更新 </a>
-                                            <a href="javascript:void(0);" onclick="del({{ $san->type_id }})" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        @endforeach
                     @endforeach
                     @endforeach
                     </tbody>
