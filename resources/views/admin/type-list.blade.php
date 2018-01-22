@@ -14,7 +14,6 @@
             <div class="am-btn-toolbar">
                 <div class="am-btn-group am-btn-group-xs">
                     <a href="{{ url('/admin/type-insert') }}" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</a>
-                    <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
                 </div>
             </div>
         </div>
@@ -22,17 +21,16 @@
 
     <div class="am-g">
         <div class="am-u-sm-12">
-            <form class="am-form">
+
                 <table class="am-table am-table-striped am-table-hover table-main">
                     <thead>
                     <tr>
-                        <th class="table-check"><input type="checkbox" /></th><th class="table-id">ID</th><th class="table-title">类别名称</th><th class="table-type">所属类别</th><th class="table-author am-hide-sm-only">添加二级类别</th><th class="table-date am-hide-sm-only">日期</th><th class="table-set">操作</th>
+                        <th class="table-id">ID</th><th class="table-title">类别名称</th><th class="table-type">所属类别</th><th class="table-author am-hide-sm-only">添加二级类别</th><th class="table-date am-hide-sm-only">日期</th><th class="table-set">操作</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($type as $list)
                     <tr>
-                        <td><input type="checkbox" /></td>
                         <td>{{ $list->type_id }}</td>
                         <td><a href="javascript:;">{{ $list->type_name }}</a></td>
                         <?php $arr=explode(',',$list->type_path); $tot=count($arr)-2; ?>
@@ -50,7 +48,6 @@
                     </tr>
                     @foreach($list->parent as $line)
                         <tr>
-                            <td><input type="checkbox" /></td>
                             <td>{{ $line->type_id }}</td>
                             <td><a href="javascript:;">{{ $line->type_name }}</a></td>
                             <?php $arr=explode(',',$line->type_path); $tot=count($arr)-2; ?>
@@ -68,7 +65,6 @@
                         </tr>
                         @foreach($line->parent as $san)
                             <tr>
-                                <td><input type="checkbox" /></td>
                                 <td>{{ $san->type_id }}</td>
                                 <td><a href="javascript:;">{{ $san->type_name }}</a></td>
                                 <?php $arr=explode(',',$san->type_path); $tot=count($arr)-2; ?>
@@ -111,7 +107,6 @@
                     </div>
                 </div>
 
-            </form>
         </div>
 
     </div>
