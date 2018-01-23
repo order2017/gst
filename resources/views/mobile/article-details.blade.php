@@ -22,16 +22,13 @@
                 <div class="bd">
                     <article class="weui_article">
                         <section>
-                            <h2 class="title">广商通招商</h2>
+                            <h2 class="title">{{ $data['article_name'] }}</h2>
+                            <h3>发布日期：{{ $data['updated_at'] }}</h3>
+                            <p>
+                                <img src="{{ url('/uploads/'.$data['article_picture']) }}" width="100%" alt="{{ $data['article_name'] }}">
+                            </p>
                             <section>
-                                <h3>广商通招商广商通招商</h3>
-                                <p>
-                                    妹子，中国南方对同辈年纪比自己小的女子的称呼[1]  。在中古时期的意思是妹妹的孩子，是常用的宗亲称谓词之一。到唐代以后开始广泛地称为甥。另外，妹子，也指甥女，即妹妹的女儿。
-                                </p>
-                                <p>
-                                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515235923280&di=30fcf90a33986c9faed973aabc03e63c&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0115f158ad6c38a801219c77b6447c.jpg%40900w_1l_2o_100sh.jpg" alt="">
-                                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515235923272&di=9615d788a8237352257c6047b038a054&imgtype=0&src=http%3A%2F%2Fimage.tianjimedia.com%2FuploadImages%2F2015%2F141%2F20%2FEM423Q284B27.jpg" alt="">
-                                </p>
+                                {{ $data['article_content'] }}
                             </section>
                         </section>
                     </article>

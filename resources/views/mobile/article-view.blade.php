@@ -44,7 +44,11 @@
                         <div class="weui_tab">
                             <div class="weui_navbar">
                                 <div class="weui_navbar_item weui_bar_item_on">
-                                    商业招商
+                                    @foreach($type as $val)
+                                        @if($val->type_id == request('type_id'))
+                                            {{ substr($val->html,5,100) }}
+                                        @endif
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="weui_tab_bd"></div>
@@ -53,54 +57,12 @@
                 </div>
 
                 <div class="main clearfix">
-                    <div class="box1" onclick="window.location='{{ url('/article-details') }}'">
-                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
-                        <p>嘉荣超市</p>
-                    </div>
-                    <div class="box2" onclick="window.location='{{ url('/article-details') }}'">
-                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
-                        <p>大众超市</p>
-                    </div>
-                    <div class="box1" onclick="window.location='{{ url('/article-details') }}'">
-                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
-                        <p>嘉荣超市</p>
-                    </div>
-                    <div class="box2" onclick="window.location='{{ url('/article-details') }}'">
-                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
-                        <p>大众超市</p>
-                    </div>
-                    <div class="box1" onclick="window.location='{{ url('/article-details') }}'">
-                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
-                        <p>嘉荣超市</p>
-                    </div>
-                    <div class="box2" onclick="window.location='{{ url('/article-details') }}'">
-                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
-                        <p>大众超市</p>
-                    </div>
-                    <div class="box1" onclick="window.location='{{ url('/article-details') }}'">
-                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
-                        <p>嘉荣超市</p>
-                    </div>
-                    <div class="box2" onclick="window.location='{{ url('/article-details') }}'">
-                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
-                        <p>大众超市</p>
-                    </div>
-                    <div class="box1" onclick="window.location='{{ url('/article-details') }}'">
-                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
-                        <p>嘉荣超市</p>
-                    </div>
-                    <div class="box2" onclick="window.location='{{ url('/article-details') }}'">
-                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
-                        <p>大众超市</p>
-                    </div>
-                    <div class="box1" onclick="window.location='{{ url('/article-details') }}'">
-                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
-                        <p>嘉荣超市</p>
-                    </div>
-                    <div class="box2" onclick="window.location='{{ url('/article-details') }}'">
-                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
-                        <p>大众超市</p>
-                    </div>
+                    @foreach($data as $list)
+                        <div onclick="window.location='{{ url('/article-details?article_id='.$list['article_id']) }}'">
+                            <img src="{{ url('/uploads/'.$list['article_picture']) }}" alt="" width="100%" height="100px">
+                            <p>{{ $list['article_name'] }}</p>
+                        </div>
+                    @endforeach
                 </div>
 
             </div>

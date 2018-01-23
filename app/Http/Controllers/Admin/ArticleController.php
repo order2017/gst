@@ -36,7 +36,7 @@ class ArticleController extends Controller
      */
     public function index() {
 
-        return view('admin.article-list',['data'=>Article::all()]);
+        return view('admin.article-list',['data'=>Article::all(),'type'=>$this->TypeList()]);
 
     }
 

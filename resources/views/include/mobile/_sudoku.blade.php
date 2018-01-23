@@ -6,7 +6,7 @@
     <div class="bd">
         <div class="weui_cells_title">商超共享</div>
         <div class="weui_grids">
-            <a href="{{ url('/article-view') }}" class="weui_grid">
+            <a href="{{ url('/article-view?type_id=3') }}" class="weui_grid">
                 <div class="weui_grid_icon">
                     <i class="iconfont icon-customs-clearance"></i>
                 </div>
@@ -14,7 +14,7 @@
                    商场招商
                 </p>
             </a>
-            <a href="{{ url('/article-view') }}" class="weui_grid">
+            <a href="{{ url('/article-view?type_id=4') }}" class="weui_grid">
                 <div class="weui_grid_icon">
                     <i class="iconfont icon-liebiaoxingshi"></i>
                 </div>

@@ -29,8 +29,7 @@
                         <th class="table-title">图片</th>
                         <th class="table-title">标题</th>
                         <th class="table-type">类别</th>
-                        <th class="table-author am-hide-sm-only">作者</th>
-                        <th class="table-date am-hide-sm-only">修改日期</th>
+                        <th class="table-date am-hide-sm-only">日期</th>
                         <th class="table-set">操作</th>
                     </tr>
                     </thead>
@@ -40,8 +39,13 @@
                         <td>{{ $list->article_id }}</td>
                         <td><img src="{{ asset('/uploads/'.$list->article_picture) }}" alt="" width="60px" height="40px"></td>
                         <td><a href="#">{{ $list->article_name }}</a></td>
-                        <td>default</td>
-                        <td class="am-hide-sm-only">测试1号</td>
+                        <td>
+                            @foreach($type as $val)
+                                @if($val->type_id == $list['article_type'])
+                                    {{substr($val->html,5,100)}}
+                                @endif
+                            @endforeach
+                        </td>
                         <td class="am-hide-sm-only">{{ $list->updated_at }}</td>
                         <td>
                             <div class="am-btn-toolbar">
