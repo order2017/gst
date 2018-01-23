@@ -18,6 +18,8 @@
  @yield('content')
 
  <script src="{{ url('/assets/wechat/js/zepto.min.js') }}"></script>
+ <script src="{{ url('assets/js/jquery.min.js') }}"></script>
+ <script src="{{ url('assets/layer/layer.js') }}"></script>
 
 @yield('script')
 </body>

@@ -54,7 +54,7 @@ class ArticleController extends Controller
 
         }else{
 
-            return back();
+            return back()->with('message',0);
 
         }
 

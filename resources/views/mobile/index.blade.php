@@ -26,3 +26,13 @@
 </div>
 
 @endsection
+
+@section('script')
+
+    @if(Session::has('message'))
+        @if(Session::get('message')==0)
+            <script>layer.msg('没有数据');</script>
+        @endif
+    @endif
+
+@endsection
