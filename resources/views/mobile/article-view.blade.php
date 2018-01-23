@@ -39,7 +39,60 @@
         <div class="weui_tab">
             <div class="weui_tab_bd">
 
+                <div class="navbar">
+                    <div class="bd" style="height: 100%;">
+                        <div class="weui_tab">
+                            <div class="weui_navbar">
+                                <div class="weui_navbar_item weui_bar_item_on">
+                                    商业招商
+                                </div>
+                            </div>
+                            <div class="weui_tab_bd"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="main clearfix">
+                    <div class="box1" onclick="window.location='{{ url('/article-details') }}'">
+                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
+                        <p>嘉荣超市</p>
+                    </div>
+                    <div class="box2" onclick="window.location='{{ url('/article-details') }}'">
+                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
+                        <p>大众超市</p>
+                    </div>
+                    <div class="box1" onclick="window.location='{{ url('/article-details') }}'">
+                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
+                        <p>嘉荣超市</p>
+                    </div>
+                    <div class="box2" onclick="window.location='{{ url('/article-details') }}'">
+                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
+                        <p>大众超市</p>
+                    </div>
+                    <div class="box1" onclick="window.location='{{ url('/article-details') }}'">
+                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
+                        <p>嘉荣超市</p>
+                    </div>
+                    <div class="box2" onclick="window.location='{{ url('/article-details') }}'">
+                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
+                        <p>大众超市</p>
+                    </div>
+                    <div class="box1" onclick="window.location='{{ url('/article-details') }}'">
+                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
+                        <p>嘉荣超市</p>
+                    </div>
+                    <div class="box2" onclick="window.location='{{ url('/article-details') }}'">
+                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
+                        <p>大众超市</p>
+                    </div>
+                    <div class="box1" onclick="window.location='{{ url('/article-details') }}'">
+                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
+                        <p>嘉荣超市</p>
+                    </div>
+                    <div class="box2" onclick="window.location='{{ url('/article-details') }}'">
+                        <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
+                        <p>大众超市</p>
+                    </div>
                     <div class="box1" onclick="window.location='{{ url('/article-details') }}'">
                         <img src="{{ url('/uploads/gst_logo.png') }}" alt="" width="100%">
                         <p>嘉荣超市</p>
