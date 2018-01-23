@@ -10,18 +10,9 @@ use Illuminate\Support\Facades\DB;
 class ArticleController extends Controller
 {
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return mixed
      */
-    public function index() {
-
-        return view('admin.article-list',['data'=>Article::all()]);
-
-    }
-
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function articleInsert() {
+    protected function TypeList(){
 
         $data = DB::select("select article_types.*,concat(type_path,type_id) p from article_types order by p");
 
@@ -36,7 +27,25 @@ class ArticleController extends Controller
             $value->html=str_repeat('|----', $size-2).$value->type_name;
         }
 
-        return view('admin.article-insert',['data'=>$data]);
+        return $data;
+
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function index() {
+
+        return view('admin.article-list',['data'=>Article::all()]);
+
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function articleInsert() {
+
+        return view('admin.article-insert',['data'=>$this->TypeList()]);
     }
 
     /**
@@ -85,7 +94,7 @@ class ArticleController extends Controller
      */
     public function articleUpdate($article_id) {
 
-        return view('admin.article-update',['data'=>Article::find($article_id)]);
+        return view('admin.article-update',['data'=>Article::find($article_id),'type'=>$this->TypeList()]);
 
     }
 

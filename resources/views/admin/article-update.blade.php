@@ -60,11 +60,13 @@
                     <label for="article-type" class="am-u-sm-3 am-form-label">文章类型</label>
                     <div class="am-u-sm-9">
                         <select id="rticle-type" name="article_type" required>
-                            <option value="">-=请选择所属类型=-</option>
-                            <option value="1">商业招商</option>
-                            <option value="2">商业拓展</option>
-                            <option value="3">商场买卖</option>
-                            <option value="4">商场转让</option>
+                            @foreach($type as $value)
+                                @if($value->size==1)
+                                    <option value="{{$value->type_id}}" @if($value->type_id == $data['article_type']) selected @endif >{{$value->html}}</option>
+                                @else
+                                    <option disabled value="{{$value->type_id}}">{{$value->html}}</option>
+                                @endif
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -72,7 +74,7 @@
                 <div class="am-form-group">
                     <label for="article-intro" class="am-u-sm-3 am-form-label">内容</label>
                     <div class="am-u-sm-9">
-                        <textarea name="article_content" rows="10" minlength="10" maxlength="100" id="article-intro" placeholder="输入内容">{{ $data['article_content'] }}</textarea>
+                        <textarea name="article_content" rows="10" id="article-intro" placeholder="输入内容">{{ $data['article_content'] }}</textarea>
                     </div>
                 </div>
 
