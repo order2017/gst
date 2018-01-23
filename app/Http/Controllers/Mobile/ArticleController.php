@@ -13,6 +13,12 @@ class ArticleController extends Controller
 
     }
 
+    public function view() {
+
+        return view('mobile.article-view');
+
+    }
+
     public function details() {
 
         return view('mobile.article-details');
