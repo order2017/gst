@@ -9,6 +9,12 @@
             font-size: 23px;
             color:#3cc51f;
         }
+        .article_content li {
+            list-style: none;
+        }
+        .article_content p img {
+            width:100%;
+        }
     </style>
 @endsection
 
@@ -27,8 +33,8 @@
                             <p>
                                 <img src="{{ url('/uploads/'.$data['article_picture']) }}" width="100%" alt="{{ $data['article_name'] }}">
                             </p>
-                            <section>
-                                {{ $data['article_content'] }}
+                            <section class="article_content">
+                                {!! $data['article_content'] !!}
                             </section>
                         </section>
                     </article>
