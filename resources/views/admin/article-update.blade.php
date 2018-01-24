@@ -74,7 +74,10 @@
                 <div class="am-form-group">
                     <label for="article-intro" class="am-u-sm-3 am-form-label">内容</label>
                     <div class="am-u-sm-9">
-                        <textarea name="article_content" rows="10" id="article-intro" placeholder="输入内容">{{ $data['article_content'] }}</textarea>
+                        {{--<textarea name="article_content" rows="10" id="article-intro" placeholder="输入内容">{{ $data['article_content'] }}</textarea>--}}
+
+                        <!-- 编辑器容器 -->
+                        <script id="container" name="article_content" type="text/plain">{!! $data['article_content'] !!}</script>
                     </div>
                 </div>
 
@@ -126,5 +129,15 @@
             <script>layer.msg('插入失败！', {icon: 5}); </script>
         @endif
     @endif
+
+    @include('vendor.ueditor.assets')
+
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var ue = UE.getEditor('container');
+        ue.ready(function() {
+            ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
+        });
+    </script>
 
 @endsection

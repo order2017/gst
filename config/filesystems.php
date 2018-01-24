@@ -63,6 +63,12 @@ return [
             'bucket' => env('AWS_BUCKET'),
         ],
 
+        'uploads' => [
+            'driver' => 'local',
+            'root' => public_path('uploads'),
+            'url' => env('APP_URL_ADD').'/uploads',
+        ],
+
         'qiniu' => [
             'driver'     => 'qiniu',
             'access_key' => env('QINIU_ACCESS_KEY', 'xxxxxxxxxxxxxxxx'),
