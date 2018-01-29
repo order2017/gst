@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<header class="am-topbar am-topbar-inverse admin-header">
+<header class="am-topbar am-topbar-inverse admin-header" style="z-index:1;">
     <div class="am-topbar-brand">
         <strong>广商通</strong> <small>后台管理</small>
     </div>
