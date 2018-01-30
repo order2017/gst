@@ -50,39 +50,19 @@ class ArticleController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function articleInsertStore(Request $request) {
 
+        try {
 
-        if (is_file($file = $request->file('article_picture'))) {
+            Article::create(array_merge($request->except(['article_picture']),['article_picture'=>Article::uploadImg('article_picture')]));
 
-            $filename = md5(time()).'.'.$file->getClientOriginalExtension();
+            return redirect('/admin/article-list')->with('message','1');
 
-            $file->move(public_path('uploads'),$filename);
+        } catch (\Exception $e) {
 
-           if (Article::create(array_merge($request->except(['article_picture']),['article_picture'=>$filename]))){
-
-               goto succeed;
-
-           }
-
-           goto failed;
-
-        }else{
-
-            if (Article::create(array_merge($request->except(['article_picture']),['article_picture'=>'gst_logo.png']))){
-
-                succeed:
-
-                return redirect('/admin/article-list')->with('message','1');
-
-            }else{
-
-                failed:
-
-                return back()->with('message','0');
-            }
+            return back()->with('message','0');
 
         }
 
@@ -104,40 +84,31 @@ class ArticleController extends Controller
      */
     public function ArticleUpdateStore(Request $request) {
 
-        if (is_file($file = $request->file('article_picture'))) {
+        try {
 
-            $filename = md5(time()).'.'.$file->getClientOriginalExtension();
+            $data = $request->except(['_token']);
 
-            $file->move(public_path('uploads'),$filename);
+            if ($request->hasFile('article_picture')) {
 
-            $data = Article::find($request->get('article_id'));
+                $data['article_picture'] = Article::uploadImg('article_picture');
 
-            unlink(public_path('uploads').'/'.$data['article_picture']);
+                if ($res = Article::find($data['article_id'])['article_picture']) {
 
-            if (Article::where('article_id',$request->get('article_id'))->update(array_merge($request->except(['article_picture','_token']),['article_picture'=>$filename]))){
+                    Article::delPicture($res);
 
-                goto succeed;
+                }
 
             }
 
-            goto failed;
-
-        }else{
-
-            $data = Article::find($request->get('article_id'));
-
-            if (Article::where('article_id',$request->get('article_id'))->update(array_merge($request->except(['article_picture','_token']),['article_picture'=>$data['article_picture']]))){
-
-                succeed:
+            if (Article::where('article_id',$data['article_id'])->update($data)){
 
                 return redirect('/admin/article-list')->with('message','1');
 
-            }else{
-
-                failed:
-
-                return back()->with('message','0');
             }
+
+        } catch (\Exception $e) {
+
+            return back()->with('message','0');
 
         }
 

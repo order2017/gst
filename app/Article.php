@@ -31,4 +31,47 @@ class Article extends Model
     protected $hidden = [
 
     ];
+
+    /**
+     * 文件上传
+     * @param $field
+     * @return string
+     */
+    public static function uploadImg($field)
+    {
+
+        if (request()->hasFile($field)) {
+
+            $pic = request()->file($field);
+
+            if ($pic->isValid()) {
+
+                $filename = md5(time()).'.'.$pic->getClientOriginalExtension();
+
+                $pic->move(public_path('uploads'),$filename);
+
+                return $filename;
+            }
+
+        }
+
+        return "";
+    }
+
+    /**
+     * 删除图片
+     * @param $path
+     * @return bool
+     */
+    public static function delPicture($path){
+
+        if (file_exists(public_path('uploads').'/'.$path)) {
+
+           return unlink(public_path('uploads').'/'.$path);
+
+        }
+
+        return false;
+    }
+
 }

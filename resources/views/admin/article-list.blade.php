@@ -37,7 +37,15 @@
                     @foreach($data as $list)
                     <tr>
                         <td>{{ $list->article_id }}</td>
-                        <td><img src="{{ asset('/uploads/'.$list->article_picture) }}" alt="" width="60px" height="40px"></td>
+                        <?php
+
+                            if(!empty($list->article_picture)){
+                                $pic = asset('/uploads/'.$list->article_picture);
+                            }else{
+                                $pic = asset('/uploads/gst_logo.png');
+                            }
+                        ?>
+                        <td><img src="{{ $pic }}" alt="" width="60px" height="40px"></td>
                         <td><a href="#">{{ $list->article_name }}</a></td>
                         <td>
                             @foreach($type as $val)
