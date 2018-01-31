@@ -114,11 +114,17 @@ class ArticleController extends Controller
 
     }
 
+    /**
+     * @param $article_id
+     * @return string
+     */
     public function ArticleDelete($article_id) {
 
-        $result = Article::where('article_id', $article_id)->delete();
+        $res = Article::find($article_id);
 
-        if ($result) {
+        if ($res->delete()) {
+
+            Article::delPicture($res['article_picture']);
 
             return "1";
 
