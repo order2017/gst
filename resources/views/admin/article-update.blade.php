@@ -28,8 +28,18 @@
                     <label class="am-u-sm-3 am-form-label">封面图片：</label>
                     <div class="am-u-sm-9">
                         <div class="am-form-group am-form-file">
-                            <?php $picture = empty($data['article_picture']) ? "gst_logo.png" : $data['article_picture']; ?>
-                            <img id="article_picture" src="{{ asset('/uploads/'.$picture) }}" class="am-img-thumbnail" style="height: 130px">
+                            <?php
+                                if (!empty($data['article_picture'])) {
+                                    if (file_exists(public_path('/uploads/'.$data['article_picture']))){
+                                        $pic = asset('/uploads/'.$data['article_picture']);
+                                    }else{
+                                        $pic = asset('/uploads/gst_logo.png');
+                                    }
+                                }else{
+                                    $pic = asset('/uploads/gst_logo.png');
+                                }
+                            ?>
+                            <img id="article_picture" src="{{ $pic }}" class="am-img-thumbnail" style="height: 130px">
                             <input name="article_picture" id="file" type="file" multiple onchange="imgPreview(this,'article_picture')">
                         </div>
                     </div>

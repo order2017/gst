@@ -38,9 +38,12 @@
                     <tr>
                         <td>{{ $list->article_id }}</td>
                         <?php
-
                             if(!empty($list->article_picture)){
-                                $pic = asset('/uploads/'.$list->article_picture);
+                                if (file_exists(public_path('/uploads/'.$list->article_picture))){
+                                    $pic = asset('/uploads/'.$list->article_picture);
+                                }else{
+                                    $pic = asset('/uploads/gst_logo.png');
+                                }
                             }else{
                                 $pic = asset('/uploads/gst_logo.png');
                             }
