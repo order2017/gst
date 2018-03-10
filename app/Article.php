@@ -74,4 +74,25 @@ class Article extends Model
         return false;
     }
 
+    /**
+     * 显示图片
+     * @param $data
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
+     */
+    public static function TitlePic($data){
+
+        if (!empty($data)){
+            if (file_exists(public_path('/uploads/'.$data))){
+                $res = url('/uploads/'.$data);
+            }else{
+                goto end;
+            }
+        }else{
+            end:
+            $res = asset('/uploads/gst_logo.png');
+        }
+
+        return $res;
+    }
+
 }
