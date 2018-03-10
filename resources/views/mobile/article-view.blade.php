@@ -59,7 +59,14 @@
                 <div class="main clearfix">
                     @foreach($data as $list)
                         <div onclick="window.location='{{ url('/article-details?article_id='.$list['article_id']) }}'">
-                            <img src="{{ url('/uploads/'.$list['article_picture']) }}" alt="" width="100%" height="100px">
+                            <?php
+                                if (!empty($list['article_picture'])){
+                                    $res = url('/uploads/'.$list['article_picture']);
+                                }else{
+                                    $res = asset('/uploads/gst_logo.png');
+                                }
+                            ?>
+                            <img src="{{ $res }}" alt="" width="100%" height="100px">
                             <p>{{ $list['article_name'] }}</p>
                         </div>
                     @endforeach

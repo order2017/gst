@@ -31,7 +31,14 @@
                             <h2 class="title">{{ $data['article_name'] }}</h2>
                             <h3>发布日期：{{ $data['updated_at'] }}</h3>
                             <p>
-                                <img src="{{ url('/uploads/'.$data['article_picture']) }}" width="100%" alt="{{ $data['article_name'] }}">
+                                <?php
+                                if (!empty($data['article_picture'])){
+                                    $res = url('/uploads/'.$data['article_picture']);
+                                }else{
+                                    $res = asset('/uploads/gst_logo.png');
+                                }
+                                ?>
+                                <img src="{{ $res }}" width="100%" alt="{{ $data['article_name'] }}">
                             </p>
                             <section class="article_content">
                                 {!! $data['article_content'] !!}
