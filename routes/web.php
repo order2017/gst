@@ -18,6 +18,9 @@ Route::get('/article-list', 'Mobile\ArticleController@index');
 Route::get('/article-view', 'Mobile\ArticleController@view');
 Route::get('/article-details', 'Mobile\ArticleController@details');
 
+Route::get('/user-login','Mobile\UserController@login');
+Route::get('/user-register','Mobile\UserController@register');
+
 
 
 // 后台

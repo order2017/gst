@@ -17,7 +17,7 @@
         </div>
         <p class="weui_tabbar_label">商业</p>
     </a>
-    <a href="javascript:;" class="weui_tabbar_item">
+    <a href="{{ url('/user-login') }}" class="weui_tabbar_item">
         <div class="weui_tabbar_icon">
             <i class="iconfont icon-wode"></i>
         </div>

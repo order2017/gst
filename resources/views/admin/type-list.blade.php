@@ -49,7 +49,7 @@
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
                                     <a  href="{{ url('/admin/type-update?type_id='.$list->type_id.'&type_name='.$list->type_name) }}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 更新</a>
-                                    <a href="javascript:void(0);" onclick="del({{ $list->type_id }})" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</a>
+                                    {{--<a href="javascript:void(0);" onclick="del({{ $list->type_id }})" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</a>--}}
                                 </div>
                             </div>
                         </td>
@@ -66,7 +66,7 @@
                                 <div class="am-btn-toolbar">
                                     <div class="am-btn-group am-btn-group-xs">
                                         <a href="{{ url('/admin/type-update?type_id='.$line->type_id.'&type_name='.$line->type_name) }}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 更新 </a>
-                                        <a href="javascript:void(0);" onclick="del({{ $line->type_id }})" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</a>
+                                        {{--<a href="javascript:void(0);" onclick="del({{ $line->type_id }})" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</a>--}}
                                     </div>
                                 </div>
                             </td>
