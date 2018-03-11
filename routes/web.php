@@ -20,6 +20,7 @@ Route::get('/article-details', 'Mobile\ArticleController@details');
 
 Route::get('/user-login','Mobile\UserController@login');
 Route::get('/user-register','Mobile\UserController@register');
+Route::post('/user-register','Mobile\UserController@registerSubmit');
 
 
 

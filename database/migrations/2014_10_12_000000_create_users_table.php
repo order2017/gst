@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->increments('user_id')->comment('用户ID');
             $table->string('user_name',45)->nullable()->comment('用户名称');
             $table->string('user_email')->nullable()->unique()->comment('用户邮箱');
+            $table->string('user_phone',32)->nullable()->unique()->comment('用户手机号');
             $table->string('password')->comment('用户密码');
 
             $table->tinyInteger('user_type')->default('0')->comment('用户类型');
