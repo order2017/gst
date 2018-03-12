@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>广商通</title>
+    <title> 广商通商业共享-商品－商业－服务－共享平台</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <link rel="icon" type="image/png" href="{{ url('assets/i/favicon.png') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ url('assets/i/app-icon72x72@2x.png') }}">

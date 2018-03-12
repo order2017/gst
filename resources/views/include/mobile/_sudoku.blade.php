@@ -1,7 +1,7 @@
 <div class="home">
     <div class="hd">
-        <h1 class="page_title">广商通</h1>
-        <p class="page_desc">专业为商业打造系统平台</p>
+        <h1 class="page_title">广商通商业共享</h1>
+        <p class="page_desc">打造商品·商业·服务共享</p>
     </div>
     <div class="bd">
         <div class="weui_cells_title">商超共享</div>
@@ -104,14 +104,14 @@
             </a>
         </div>
 
-        <div class="weui_cells_title">共享金融</div>
+        <div class="weui_cells_title">广商通商业共享&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp商业·商品·服务·共享金融</div>
         <div class="weui_grids">
             <a href="{{ url('/article-view?type_id=16') }}" class="weui_grid">
                 <div class="weui_grid_icon">
                     <i class="iconfont icon-dianpu"></i>
                 </div>
                 <p class="weui_grid_label">
-                    网贷
+                    租赁权贷
                 </p>
             </a>
             <a href="{{ url('/article-view?type_id=17') }}" class="weui_grid">
@@ -119,7 +119,7 @@
                     <i class="iconfont icon-gouwu"></i>
                 </div>
                 <p class="weui_grid_label">
-                    小额贷
+                    经营权贷
                 </p>
             </a>
             <a href="{{ url('/article-view?type_id=18') }}" class="weui_grid">
@@ -127,7 +127,15 @@
                     <i class="iconfont icon-gouwu"></i>
                 </div>
                 <p class="weui_grid_label">
-                    商业贷
+                    产权贷
+                </p>
+            </a>
+            <a href="{{ url('/article-view?type_id=19') }}" class="weui_grid">
+                <div class="weui_grid_icon">
+                    <i class="iconfont icon-gouwu"></i>
+                </div>
+                <p class="weui_grid_label">
+                    品牌权贷
                 </p>
             </a>
         </div>
