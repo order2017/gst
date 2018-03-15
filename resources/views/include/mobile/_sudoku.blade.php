@@ -8,7 +8,7 @@
         <div class="weui_grids">
             <a href="{{ url('/article-view?type_id=5') }}" class="weui_grid">
                 <div class="weui_grid_icon">
-                    <i class="iconfont icon-customs-clearance"></i>
+                    <img src="{{ asset('assets/i/jin.jpg') }}" alt="">
                 </div>
                 <p class="weui_grid_label">
                    商场招商
@@ -16,7 +16,7 @@
             </a>
             <a href="{{ url('/article-view?type_id=6') }}" class="weui_grid">
                 <div class="weui_grid_icon">
-                    <i class="iconfont icon-liebiaoxingshi"></i>
+                    <img src="{{ asset('assets/i/mu.jpg') }}" alt="">
                 </div>
                 <p class="weui_grid_label">
                     商业招商
@@ -24,7 +24,7 @@
             </a>
             <a href="{{ url('/article-view?type_id=7') }}" class="weui_grid">
                 <div class="weui_grid_icon">
-                    <i class="iconfont icon-leimu"></i>
+                    <img src="{{ asset('assets/i/shui.jpg') }}" alt="">
                 </div>
                 <p class="weui_grid_label">
                     商场买卖
@@ -32,7 +32,7 @@
             </a>
             <a href="{{ url('/article-view?type_id=8') }}" class="weui_grid">
                 <div class="weui_grid_icon">
-                    <i class="iconfont icon-caidan"></i>
+                    <img src="{{ asset('assets/i/huo.jpg') }}" alt="">
                 </div>
                 <p class="weui_grid_label">
                     商业买卖
@@ -40,7 +40,7 @@
             </a>
             <a href="{{ url('/article-view?type_id=9') }}" class="weui_grid">
                 <div class="weui_grid_icon">
-                    <i class="iconfont icon-ziyuan-xianxing"></i>
+                    <img src="{{ asset('assets/i/tu.jpg') }}" alt="">
                 </div>
                 <p class="weui_grid_label">
                     设备买卖
@@ -48,7 +48,7 @@
             </a>
             <a href="{{ url('/article-view?type_id=9') }}" class="weui_grid">
                 <div class="weui_grid_icon">
-                    <i class="iconfont icon-ziyuan-xianxing"></i>
+                    <img src="{{ asset('assets/i/map.jpg') }}" alt="">
                 </div>
                 <p class="weui_grid_label">
                     品牌拓展
