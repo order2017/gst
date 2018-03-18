@@ -5,13 +5,13 @@
         </div>
         <p class="weui_tabbar_label">首页</p>
     </a>
-    <a href="javascript:;" class="weui_tabbar_item">
+    <a href="{{ url('/index-sc') }}" class="weui_tabbar_item">
         <div class="weui_tabbar_icon">
             <i class="iconfont icon-caigou-xianxing"></i>
         </div>
         <p class="weui_tabbar_label">购物</p>
     </a>
-    <a href="javascript:;" class="weui_tabbar_item">
+    <a href="{{ url('/index-sy') }}" class="weui_tabbar_item">
         <div class="weui_tabbar_icon">
             <i class="iconfont icon-hezuoguanxi-xianxing"></i>
         </div>

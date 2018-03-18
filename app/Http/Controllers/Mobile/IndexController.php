@@ -12,4 +12,16 @@ class IndexController extends Controller
         return view('mobile.index');
 
     }
+
+    public function indexSy() {
+
+        return view('mobile.index-sy');
+
+    }
+
+    public function indexSc() {
+
+        return view('mobile.index-sc');
+
+    }
 }
