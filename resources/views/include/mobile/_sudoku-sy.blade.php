@@ -4,7 +4,7 @@
         <p class="page_desc" style="color:red;">共享-商业-商品-服务-金融</p>
     </div>
     <div class="bd">
-        <div class="weui_cells_title">共享商业</div>
+        <div class="weui_cells_title" onclick="javascript:window.location='{{ url('/details-xx')}}'" >广商通~共享商业~让出租方(卖方)与承租方(买方)直接交易的服务！</div>
         <div class="weui_grids">
             <a href="{{ url('/article-view?type_id=5') }}" class="weui_grid" style="padding: 5px;">
                 <div class="weui_grid_icon" style="width: 100%; height: 70px; background-color: #f3cb71; text-align: center;">

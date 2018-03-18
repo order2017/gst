@@ -24,4 +24,10 @@ class IndexController extends Controller
         return view('mobile.index-sc');
 
     }
+
+    public function indexXx() {
+
+        return view('mobile.details-xx');
+
+    }
 }

@@ -17,6 +17,7 @@ Route::get('/', 'Mobile\IndexController@index');
 Route::get('/index-sy', 'Mobile\IndexController@indexSy');
 
 Route::get('/index-sc', 'Mobile\IndexController@indexSc');
+Route::get('/details-xx', 'Mobile\IndexController@indexXx');
 
 Route::get('/article-list', 'Mobile\ArticleController@index');
 Route::get('/article-view', 'Mobile\ArticleController@view');
