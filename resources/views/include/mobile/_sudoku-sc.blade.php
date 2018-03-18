@@ -1,7 +1,7 @@
 <div class="home">
     <div class="hd">
         <h1 class="page_title">广商通商业共享</h1>
-        <p class="page_desc" style="color:red;">共享-商业-商品-服务-金融</p>
+        <p class="page_desc" style="color:red;">加入-共享商超网购-线上线下销售-更轻松！</p>
     </div>
     <div class="bd">
         <div class="weui_cells_title">共享商超</div>
