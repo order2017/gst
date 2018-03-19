@@ -30,4 +30,10 @@ class IndexController extends Controller
         return view('mobile.details-xx');
 
     }
+
+    public function indexS() {
+
+        return view('mobile.details-sc');
+
+    }
 }
