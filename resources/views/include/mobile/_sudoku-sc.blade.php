@@ -57,7 +57,7 @@
         </div>
     </div>
     <div class="hd">
-        <p class="page_desc" style="color:red;" onclick="javascript:window.location='{{ url('/details-sc')}}'">加入-共享商超网购-线上线下销售-更轻松！</p>
+        <p class="page_desc" style="color:red;">加入-共享商超网购-线上线下销售-更轻松！</p>
     </div>
 </div>
 
