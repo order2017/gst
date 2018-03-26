@@ -6,7 +6,7 @@
     <div class="bd">
         <div class="weui_cells_title">共享商超</div>
         <div class="weui_grids">
-            <a href="{{ url('/article-view?type_id=10') }}" class="weui_grid" style="padding: 5px;">
+            <a href="{{ url('/article-view?type_id=9') }}" class="weui_grid" style="padding: 5px;">
                 <div class="weui_grid_icon" style="width: 100%; height: 80px;">
                     <img src="{{ asset('/assets/i/rou.jpg') }}" alt="">
                 </div>
@@ -46,7 +46,7 @@
                     共享服务
                 </p>
             </a>
-            <a href="{{ url('/article-view?type_id=13') }}" class="weui_grid" style="padding: 5px;">
+            <a href="{{ url('/article-view?type_id=14') }}" class="weui_grid" style="padding: 5px;">
                 <div class="weui_grid_icon" style="width: 100%; height: 80px;">
                     <img src="{{ asset('/assets/i/gst_logo.png') }}" alt="">
                 </div>
