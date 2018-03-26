@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <div class="weui_cells_tips">
-                            <a href="javascript:;" class="weui_cells_tips">用户注册</a>
+                            <a href="{{ url('/user-register') }}" class="weui_cells_tips">用户注册</a>
                             <a href="javascript:;" class="weui_cells_tips">找回密码</a>
                         </div>
                         <div class="weui_btn_area">
@@ -80,7 +80,7 @@
         function add() {
             str=$("#formAdd").serialize();
             $.post('/user-register',{string:str,'_token':'{{csrf_token()}}'},function(data){
-                if(data['success']=="成功"){
+                if(data['success']=="注册成功"){
                     layer.msg(data['success']);
                 }else{
                     layer.msg(data['error']);
