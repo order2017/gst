@@ -46,7 +46,7 @@ class ArticleController extends Controller
      */
     public function view(Request $request) {
 
-        $data = Article::where('article_type',$request->get('type_id','0'))->get();
+        $data = Article::where('article_type',$request->get('type_id','0'))->orderBy('updated_at','desc')->get();
 
         if (count($data)){
 
