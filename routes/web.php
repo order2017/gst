@@ -12,22 +12,49 @@
 */
 
 // 手机
-Route::get('/', 'Mobile\IndexController@index');
+Route::group(['namespace' => 'Mobile'],function (){
 
-Route::get('/index-sy', 'Mobile\IndexController@indexSy');
+    // 首页
+    Route::get('/', 'IndexController@index');
 
-Route::get('/index-sc', 'Mobile\IndexController@indexSc');
-Route::get('/details-xx', 'Mobile\IndexController@indexXx');
-Route::get('/details-sc', 'Mobile\IndexController@indexS');
+    // 登录
+    Route::get('/user-login','UserController@login');
+    Route::post('/user-login','UserController@loginStore');
 
-Route::get('/article-list', 'Mobile\ArticleController@index');
-Route::get('/article-view', 'Mobile\ArticleController@view');
-Route::get('/article-details', 'Mobile\ArticleController@details');
+    // 注册
+    Route::get('/user-register','UserController@register');
+    Route::post('/user-register','UserController@registerSubmit');
 
-Route::get('/user-login','Mobile\UserController@login');
-Route::get('/user-register','Mobile\UserController@register');
-Route::post('/user-register','Mobile\UserController@registerSubmit');
+    // 商业
+    Route::get('/index-sy', 'IndexController@indexSy');
+    // 商超
+    Route::get('/index-sc', 'IndexController@indexSc');
 
+    // 文章视图
+    Route::get('/article-view', 'ArticleController@view');
+
+    Route::group(['middleware' => 'mobile.login'],function (){
+
+        // 商业详细
+        Route::get('/details-xx', 'IndexController@indexXx');
+        // 商超详细
+        Route::get('/details-sc', 'IndexController@indexS');
+
+        // 文章列表
+        Route::get('/article-list', 'ArticleController@index');
+
+        // 文章详细
+        Route::get('/article-details', 'ArticleController@details');
+
+        // 用户中心
+        Route::get('/user-index', 'UserController@userIndex');
+
+        // 用户退出
+        Route::get('/logout', 'UserController@logout');
+
+    });
+
+});
 
 
 // 后台

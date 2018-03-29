@@ -35,7 +35,7 @@
                             <div class="weui_cell">
                                 <div class="weui_cell_hd"><label class="weui_label">微信号</label></div>
                                 <div class="weui_cell_bd weui_cell_primary">
-                                    <input class="weui_input" type="text" name="user_email" placeholder="请输入微信号">
+                                    <input class="weui_input" type="text" name="wechat_number" placeholder="请输入微信号">
                                 </div>
                             </div>
                             <div class="weui_cell">
