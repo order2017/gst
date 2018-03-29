@@ -33,18 +33,19 @@ Route::group(['namespace' => 'Mobile'],function (){
     // 文章视图
     Route::get('/article-view', 'ArticleController@view');
 
+    //----------
+    // 商业详细
+    Route::get('/details-xx', 'IndexController@indexXx');
+    // 商超详细
+    Route::get('/details-sc', 'IndexController@indexS');
+
+    // 文章列表
+    Route::get('/article-list', 'ArticleController@index');
+
+    // 文章详细
+    Route::get('/article-details', 'ArticleController@details');
+
     Route::group(['middleware' => 'mobile.login'],function (){
-
-        // 商业详细
-        Route::get('/details-xx', 'IndexController@indexXx');
-        // 商超详细
-        Route::get('/details-sc', 'IndexController@indexS');
-
-        // 文章列表
-        Route::get('/article-list', 'ArticleController@index');
-
-        // 文章详细
-        Route::get('/article-details', 'ArticleController@details');
 
         // 用户中心
         Route::get('/user-index', 'UserController@userIndex');

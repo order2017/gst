@@ -81,7 +81,9 @@
             str=$("#formAdd").serialize();
             $.post('/user-register',{string:str,'_token':'{{csrf_token()}}'},function(data){
                 if(data['success']=="注册成功"){
-                    layer.msg(data['success']);
+                    layer.msg(data['success'],function () {
+                        window.location.href="/user-login";
+                    });
                 }else{
                     layer.msg(data['error']);
                 }
