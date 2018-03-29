@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Common\PublicFunction;
 use Illuminate\Support\ServiceProvider;
 
 class CommonServiceProvider extends ServiceProvider
@@ -25,7 +26,7 @@ class CommonServiceProvider extends ServiceProvider
     {
         $this->app->bind('common',function (){
 
-            return true;
+            return new PublicFunction();
 
         });
     }

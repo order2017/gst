@@ -6,6 +6,16 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class Common
 {
+    public $publicFunction;
+
+    /**
+     * Common constructor.
+     * @param $publicFunction
+     */
+    public function __construct(PublicFunction $publicFunction)
+    {
+        $this->publicFunction = $publicFunction;
+    }
 
     /**
      * 数组分页

@@ -36,7 +36,9 @@ class ArticleController extends Controller
      */
     public function index() {
 
-        return view('admin.article-list',['data'=>Article::all(),'type'=>$this->TypeList()]);
+        $data = Article::orderBy('updated_at','desc')->paginate(15);
+
+        return view('admin.article-list',['data'=>$data,'type'=>$this->TypeList()]);
 
     }
 

@@ -60,7 +60,7 @@
                     @foreach($data as $list)
                         <div onclick="window.location='{{ url('/article-details?article_id='.$list['article_id']) }}'">
                             <img src="{{ \App\Article::TitlePic($list['article_picture']) }}" alt="" width="100%" height="100px">
-                            <p>{{ $list['article_name'] }}</p>
+                            <p>{{ str_limit($list['article_name'], $limit = 20, $end = '...') }}</p>
                         </div>
                     @endforeach
                 </div>
