@@ -10,6 +10,10 @@ class User extends Authenticatable
 
     const IS_USER = 30;
 
+    const USER_TYPE_ONE = 0;
+    const USER_TYPE_TWO = 1;
+    const USER_TYPE_THREE = 2;
+
     use Notifiable;
 
     protected $primaryKey = 'user_id';
@@ -39,4 +43,14 @@ class User extends Authenticatable
     protected $hidden = [
         'remember_token',
     ];
+
+    public static function UserTypeList()
+    {
+        return [
+            self::USER_TYPE_ONE => '普通会员',
+            self::USER_TYPE_TWO => 'VIP会员',
+            self::USER_TYPE_THREE => '代理会员',
+        ];
+    }
+
 }
