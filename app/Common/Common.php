@@ -8,13 +8,17 @@ class Common
 {
     public $publicFunction;
 
+    public $smsFunction;
+
     /**
      * Common constructor.
-     * @param $publicFunction
+     * @param PublicFunction $publicFunction
+     * @param SmsFunction $smsFunction
      */
-    public function __construct(PublicFunction $publicFunction)
+    public function __construct(PublicFunction $publicFunction,SmsFunction $smsFunction)
     {
         $this->publicFunction = $publicFunction;
+        $this->smsFunction = $smsFunction;
     }
 
     /**

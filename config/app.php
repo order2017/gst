@@ -180,6 +180,8 @@ return [
         Overtrue\LaravelFilesystem\Qiniu\QiniuStorageServiceProvider::class,
         Overtrue\LaravelUEditor\UEditorServiceProvider::class,
 
+        App\Providers\CommonServiceProvider::class,
+
     ],
 
     /*

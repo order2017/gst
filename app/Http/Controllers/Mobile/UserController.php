@@ -21,6 +21,9 @@ class UserController extends Controller
             return redirect('/user-index');
 
         }
+
+        //app('common')->smsFunction->Send_sms('13480731740');
+
         return view('mobile.user.user-login');
 
     }

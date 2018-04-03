@@ -36,21 +36,21 @@
                 <div class="am-form-group">
                     <label for="article-contact" class="am-u-sm-3 am-form-label">联系人：</label>
                     <div class="am-u-sm-9">
-                        <input type="text" id="article-contact" name="article_contact" value="周文彪" placeholder="联系人" required>
+                        <input type="text" id="article-contact" name="article_contact" value="周生" placeholder="联系人" required>
                     </div>
                 </div>
 
                 <div class="am-form-group">
                     <label for="article-phone" class="am-u-sm-3 am-form-label">电话</label>
                     <div class="am-u-sm-9">
-                        <input type="tel" id="article-phone" name="article_tel" value="13800138000" placeholder="输入你的电话号码" required>
+                        <input type="tel" id="article-phone" name="article_tel" value="13823771801" placeholder="输入你的电话号码" required>
                     </div>
                 </div>
 
                 <div class="am-form-group">
                     <label for="article-QQ" class="am-u-sm-3 am-form-label">QQ</label>
                     <div class="am-u-sm-9">
-                        <input type="number" pattern="[0-9]*" id="article-QQ" value="13800138000" name="article_qq" placeholder="输入你的QQ号码" required>
+                        <input type="number" pattern="[0-9]*" id="article-QQ" value="13823771801" name="article_qq" placeholder="输入你的QQ号码" required>
                     </div>
                 </div>
 
