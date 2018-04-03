@@ -74,6 +74,12 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function (){
         // 用户列表
         Route::get('/user-list', 'UserController@index');
 
+        // 用户编辑
+        Route::get('/user-edit/{user_id}', 'UserController@userEdit');
+        Route::post('/user-edit', 'UserController@userEditStore');
+        // 用户删除
+        Route::get('/user-delete/{user_id}', 'UserController@userEditDel');
+
         // 文章列表
         Route::get('/article-list', 'ArticleController@index');
         // 文章添加

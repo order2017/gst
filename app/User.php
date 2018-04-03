@@ -44,6 +44,9 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    /**
+     * @return array
+     */
     public static function UserTypeList()
     {
         return [
@@ -51,6 +54,14 @@ class User extends Authenticatable
             self::USER_TYPE_TWO => 'VIP会员',
             self::USER_TYPE_THREE => '代理会员',
         ];
+    }
+
+    /**
+     * @return mixed|string
+     */
+    public function getUserTypeTextAttribute()
+    {
+        return empty($this->user_type) ? '普通会员' : self::UserTypeList()[$this->user_type];
     }
 
 }
