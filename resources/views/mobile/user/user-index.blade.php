@@ -24,21 +24,40 @@
                         <p class="page_desc" style="color:red;">共享-商业-商品-服务-金融</p>
                     </div>
                     <div class="bd">
+
+                        <div class="weui_cells weui_cells_radio" onclick="Fb()">
+                            <label class="weui_cell weui_check_label" for="x12">
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <p style="font-size: 14px;">VIP会员 免费发布信息</p>
+                                </div>
+                                <div class="weui_cell_ft">
+                                    <input type="radio" class="weui_check" id="x12" checked="checked">
+                                    <span class="weui_icon_checked"></span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="weui_panel weui_panel_access">
+
+                            <div class="weui_panel_hd">您当前级别：<span style="color: red;">{{ $data['user_type_text'] }}</span></div>
+
+                        </div>
+
                         <div class="weui_cells_title">个人会员中心</div>
                         <div class="weui_cells">
                             <div class="weui_cell">
                                 <div class="weui_cell_bd weui_cell_primary">
-                                    <p>用户名：{{ $data['user_name'] }}</p>
+                                    <p style="font-size: 14px; color: #5a5959;">用户名：{{ $data['user_name'] }}</p>
                                 </div>
                             </div>
                             <div class="weui_cell">
                                 <div class="weui_cell_bd weui_cell_primary">
-                                    <p>手机号：{{ $data['user_phone'] }}</p>
+                                    <p style="font-size: 14px; color: #5a5959;">手机号：{{ $data['user_phone'] }}</p>
                                 </div>
                             </div>
                             <div class="weui_cell">
                                 <div class="weui_cell_bd weui_cell_primary">
-                                    <p>微信号：{{ $data['wechat_number'] }}</p>
+                                    <p style="font-size: 14px; color: #5a5959;">微信号：{{ $data['wechat_number'] }}</p>
                                 </div>
                             </div>
                         </div>
@@ -47,14 +66,15 @@
                         <div class="weui_cells weui_cells_access">
                             <a class="weui_cell" href="javascript:;">
                                 <div class="weui_cell_bd weui_cell_primary">
-                                    <p>当前余额：1000元</p>
+                                    <p style="font-size: 14px; color: #5a5959;">当前余额：&yen; 0.00 元</p>
                                 </div>
                                 <div class="weui_cell_ft">
+                                    <span style="font-size: 14px; color: red;">充值余额</span>
                                 </div>
                             </a>
                             <a class="weui_cell" href="javascript:;">
                                 <div class="weui_cell_bd weui_cell_primary">
-                                    <p>浏览信息次数：1600次</p>
+                                    <p style="font-size: 14px; color: #5a5959;">浏览信息次数：0 次</p>
                                 </div>
                                 <div class="weui_cell_ft">
                                 </div>
@@ -76,5 +96,9 @@
 @endsection
 
 @section('script')
-
+    <script type="text/javascript">
+        function Fb() {
+            layer.msg('您的余额不足100元!');
+        }
+    </script>
 @endsection
