@@ -25,6 +25,10 @@ Route::group(['namespace' => 'Mobile'],function (){
     Route::get('/user-register','UserController@register');
     Route::post('/user-register','UserController@registerSubmit');
 
+    // 发送验证码
+    Route::post('/send','UserController@Send');
+
+
     // 商业
     Route::get('/index-sy', 'IndexController@indexSy');
     // 商超

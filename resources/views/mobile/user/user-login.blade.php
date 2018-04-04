@@ -40,8 +40,8 @@
                                 </div>
                             </div>
                             <div class="weui_cells_tips">
-                                <a href="{{ url('/user-register') }}" class="weui_cells_tips">用户注册</a>
-                                <a href="javascript:;" class="weui_cells_tips">找回密码</a>
+                                <a href="{{ url('/user-register') }}" class="weui_btn weui_btn_mini weui_btn_primary">用户注册</a>&nbsp;&nbsp;
+                                <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_default">找回密码</a>
                             </div>
                             <div class="weui_btn_area">
                                 <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips" onclick="Login()">确定</a>
@@ -72,9 +72,10 @@
             str=$("#formAdd").serialize();
             $.post('/user-login',{string:str,'_token':'{{csrf_token()}}'},function(data){
                 if(data['success']=="登录成功"){
-                    layer.msg(data['success'],function () {
+                    layer.msg(data['success']);
+                    setTimeout(function () {
                         window.location.href="/user-index";
-                    });
+                    },500)
                 }else{
                     layer.msg(data['error']);
                 }
