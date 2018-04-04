@@ -29,6 +29,9 @@
             float: left;
             margin: 1%;
         }
+        .page_title {
+            font-size: 26px;
+        }
     </style>
 @endsection
 
@@ -39,21 +42,28 @@
         <div class="weui_tab">
             <div class="weui_tab_bd">
 
-                <div class="navbar">
-                    <div class="bd" style="height: 100%;">
-                        <div class="weui_tab">
-                            <div class="weui_navbar">
-                                <div class="weui_navbar_item weui_bar_item_on">
-                                    @foreach($type as $val)
-                                        @if($val->type_id == request('type_id'))
-                                            {{ substr($val->html,5,100) }}
-                                        @endif
-                                    @endforeach
-                                </div>
+                <div class="hd" style="padding: 1em 0;">
+                    <h1 class="page_title">
+                        @foreach($type as $val)
+                            @if($val->type_id == request('type_id'))
+                                {{ substr($val->html,5,100) }}
+                            @endif
+                        @endforeach
+                    </h1>
+                </div>
+                <div class="bd">
+
+                    <div class="weui_search_bar" id="search_bar">
+                        <form class="weui_search_outer">
+                            <div class="weui_search_inner">
+                                <i class="weui_icon_search"></i>
+                                <input type="search" class="weui_search_input" id="search_input" placeholder="搜索" required="">
+                                <a href="javascript:" class="weui_icon_clear" id="search_clear"></a>
                             </div>
-                            <div class="weui_tab_bd"></div>
-                        </div>
+                        </form>
+                        <a href="javascript:" class="weui_search_cancel" id="search_cancel">取消</a>
                     </div>
+
                 </div>
 
                 <div class="main clearfix">
