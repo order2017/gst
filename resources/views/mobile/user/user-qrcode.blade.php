@@ -37,6 +37,9 @@
                                 </p>
                             </section>
                         </article>
+                        <div class="weui_btn_area">
+                            <a href="/user-index" class="weui_btn weui_btn_warn">返回</a>
+                        </div>
                     </div>
                 </div>
             </div>

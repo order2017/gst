@@ -49,7 +49,7 @@
                                 <div class="weui_cell_bd weui_cell_primary">
                                     <p style="font-size: 14px; color: #5a5959;">用户名：{{ $data['user_name'] }}</p>
                                 </div>
-                                <div class="weui_cell_ft">
+                                <div class="weui_cell_ft" onclick="javascript:window.location='/user-password'">
                                     <span style="font-size: 14px;">修改密码</span>
                                 </div>
                             </div>

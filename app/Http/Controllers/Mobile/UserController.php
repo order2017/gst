@@ -174,4 +174,43 @@ class UserController extends Controller
 
     }
 
+    /**
+     * 用户修改密码
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function userPassword() {
+
+        return view('mobile.user.user-password',['data'=>session('mobile_user')]);
+
+    }
+
+    /**
+     * 用户修改密码
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function userPasswordStore(Request $request) {
+
+        if (!empty($request->get('password')) && !empty($request->get('fixed_password'))) {
+
+            if ($request->get('password') == $request->get('fixed_password')) {
+
+                User::where('user_id',$request->get('user_id'))->update(['password'=>bcrypt($request->get('password'))]);
+
+                return back()->with('mgs','2');
+
+            }else{
+
+                return back()->with('mgs','1');
+
+            }
+
+        }else{
+
+            return back()->with('mgs','0');
+
+        }
+
+    }
+
 }
