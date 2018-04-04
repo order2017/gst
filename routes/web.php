@@ -28,7 +28,6 @@ Route::group(['namespace' => 'Mobile'],function (){
     // 发送验证码
     Route::post('/send','UserController@Send');
 
-
     // 商业
     Route::get('/index-sy', 'IndexController@indexSy');
     // 商超
@@ -53,6 +52,9 @@ Route::group(['namespace' => 'Mobile'],function (){
 
         // 用户中心
         Route::get('/user-index', 'UserController@userIndex');
+
+        // 用户个人微信二维码
+        Route::get('/user-qrcode', 'UserController@userQrcode');
 
         // 用户退出
         Route::get('/logout', 'UserController@logout');

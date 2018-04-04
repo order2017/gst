@@ -49,6 +49,9 @@
                                 <div class="weui_cell_bd weui_cell_primary">
                                     <p style="font-size: 14px; color: #5a5959;">用户名：{{ $data['user_name'] }}</p>
                                 </div>
+                                <div class="weui_cell_ft">
+                                    <span style="font-size: 14px;">修改密码</span>
+                                </div>
                             </div>
                             <div class="weui_cell">
                                 <div class="weui_cell_bd weui_cell_primary">
@@ -64,12 +67,12 @@
 
                         <div class="weui_cells_title">会员充值中心</div>
                         <div class="weui_cells weui_cells_access">
-                            <a class="weui_cell" href="javascript:;">
+                            <a class="weui_cell" href="/user-qrcode">
                                 <div class="weui_cell_bd weui_cell_primary">
                                     <p style="font-size: 14px; color: #5a5959;">当前余额：&yen; 0.00 元</p>
                                 </div>
                                 <div class="weui_cell_ft">
-                                    <span style="font-size: 14px; color: red;">充值余额</span>
+                                    <span style="font-size: 14px; color: red;">去充值</span>
                                 </div>
                             </a>
                             <a class="weui_cell" href="javascript:;">
@@ -83,7 +86,7 @@
 
                         <br>
                         <div class="weui_btn_area">
-                            <a class="weui_btn weui_btn_primary" href="/logout" id="showTooltips">退出</a>
+                            <a class="weui_btn weui_btn_warn" href="/logout" id="showTooltips">退出</a>
                         </div>
                     </div>
                 </div>

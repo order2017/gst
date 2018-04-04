@@ -164,4 +164,14 @@ class UserController extends Controller
 
     }
 
+    /**
+     * 用户个人微信二维码
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function userQrcode() {
+
+        return view('mobile.user.user-qrcode');
+
+    }
+
 }

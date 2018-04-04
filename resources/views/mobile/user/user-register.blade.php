@@ -70,7 +70,7 @@
                         </div>
                         <div class="weui_cells_tips">
                             <a href="{{ url('/user-register') }}" class="weui_btn weui_btn_mini weui_btn_primary">用户注册</a>&nbsp;&nbsp;
-                            <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_default">找回密码</a>
+                            <a href="/user-login" class="weui_btn weui_btn_mini weui_btn_default">用户登录</a>
                         </div>
                         <div class="weui_btn_area">
                             <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips" onclick="add()">确定</a>
