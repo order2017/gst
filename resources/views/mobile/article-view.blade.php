@@ -54,14 +54,13 @@
                 <div class="bd">
 
                     <div class="weui_search_bar" id="search_bar">
-                        <form class="weui_search_outer">
+                        <form class="weui_search_outer" action="" method="get">
                             <div class="weui_search_inner">
                                 <i class="weui_icon_search"></i>
-                                <input type="search" class="weui_search_input" id="search_input" placeholder="搜索" required="">
-                                <a href="javascript:" class="weui_icon_clear" id="search_clear"></a>
+                                <input type="search" class="weui_search_input" id="search_input" placeholder="请输入搜索的商业信息" required="">
+                                <input type="submit" value="立即搜索" class="weui_icon_clear" id="search_clear" style="height: 30px;">
                             </div>
                         </form>
-                        <a href="javascript:" class="weui_search_cancel" id="search_cancel">取消</a>
                     </div>
 
                 </div>
