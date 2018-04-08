@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Mobile;
 
 use App\Article;
+use App\Common\Common;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -42,11 +43,12 @@ class ArticleController extends Controller
 
     /**
      * @param Request $request
+     * @param Common $common
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
-    public function view(Request $request) {
+    public function view(Request $request,Common $common) {
 
-        $data = Article::where('article_type',$request->get('type_id','0'))->orderBy('updated_at','desc')->get();
+        $data = $common->searchKey->Search(Article::query()->where('article_type',$request->get('type_id','0'))->orderBy('updated_at','desc'),['article_name'],'100');
 
         if (count($data)){
 

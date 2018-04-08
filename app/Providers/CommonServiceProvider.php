@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Common\Common;
 use App\Common\PublicFunction;
+use App\Common\SearchKey;
 use App\Common\SmsFunction;
 use Illuminate\Support\ServiceProvider;
 
@@ -28,7 +29,7 @@ class CommonServiceProvider extends ServiceProvider
     {
         $this->app->bind('common',function (){
 
-            return new Common(new PublicFunction(),new SmsFunction());
+            return new Common(new PublicFunction(),new SmsFunction(),new SearchKey());
 
         });
     }

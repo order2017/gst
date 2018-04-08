@@ -10,15 +10,19 @@ class Common
 
     public $smsFunction;
 
+    public $searchKey;
+
     /**
      * Common constructor.
      * @param PublicFunction $publicFunction
      * @param SmsFunction $smsFunction
+     * @param SearchKey $searchKey
      */
-    public function __construct(PublicFunction $publicFunction,SmsFunction $smsFunction)
+    public function __construct(PublicFunction $publicFunction,SmsFunction $smsFunction,SearchKey $searchKey)
     {
         $this->publicFunction = $publicFunction;
         $this->smsFunction = $smsFunction;
+        $this->searchKey = $searchKey;
     }
 
     /**

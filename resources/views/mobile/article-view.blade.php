@@ -54,10 +54,11 @@
                 <div class="bd">
 
                     <div class="weui_search_bar" id="search_bar">
-                        <form class="weui_search_outer" action="" method="get">
+                        <form class="weui_search_outer" action="/article-view" method="get">
                             <div class="weui_search_inner">
                                 <i class="weui_icon_search"></i>
-                                <input type="search" class="weui_search_input" id="search_input" placeholder="请输入搜索的商业信息" required="">
+                                <input type="search" class="weui_search_input" id="search_input" name="article_name" @if(!empty(request('article_name'))) value="{{ request('article_name') }}" @endif placeholder="请输入搜索的信息">
+                                <input type="hidden" name="type_id" value="{{ request('type_id') }}">
                                 <input type="submit" value="立即搜索" class="weui_icon_clear" id="search_clear" style="height: 30px;">
                             </div>
                         </form>
