@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Common\Common;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -9,11 +10,12 @@ use App\Http\Controllers\Controller;
 class UserController extends Controller
 {
     /**
+     * @param Common $common
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index() {
+    public function index(Common $common) {
 
-        $data = User::where('user_type','<',30)->get();
+        $data = $common->searchKey->Search(User::query()->where('user_type','<',30)->orderBy('updated_at','desc'),['user_phone'],'15');
 
         return view('admin.user-list',['data'=>$data]);
 

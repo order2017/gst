@@ -1,5 +1,82 @@
 @extends('layouts.admin')
 
+@section('style')
+    <style type="text/css">
+        #pull_right{
+            text-align:center;
+        }
+        .pull-right {
+            /*float: left!important;*/
+        }
+        .pagination {
+            display: inline-block;
+            padding-left: 0;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .pagination > li {
+            display: inline;
+        }
+        .pagination > li > a,
+        .pagination > li > span {
+            position: relative;
+            float: left;
+            padding: 6px 12px;
+            margin-left: -1px;
+            line-height: 1.42857143;
+            color: #428bca;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+        .pagination > li:first-child > a,
+        .pagination > li:first-child > span {
+            margin-left: 0;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+        .pagination > li:last-child > a,
+        .pagination > li:last-child > span {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+        .pagination > li > a:hover,
+        .pagination > li > span:hover,
+        .pagination > li > a:focus,
+        .pagination > li > span:focus {
+            color: #2a6496;
+            background-color: #eee;
+            border-color: #ddd;
+        }
+        .pagination > .active > a,
+        .pagination > .active > span,
+        .pagination > .active > a:hover,
+        .pagination > .active > span:hover,
+        .pagination > .active > a:focus,
+        .pagination > .active > span:focus {
+            z-index: 2;
+            color: #fff;
+            cursor: default;
+            background-color: #428bca;
+            border-color: #428bca;
+        }
+        .pagination > .disabled > span,
+        .pagination > .disabled > span:hover,
+        .pagination > .disabled > span:focus,
+        .pagination > .disabled > a,
+        .pagination > .disabled > a:hover,
+        .pagination > .disabled > a:focus {
+            color: #777;
+            cursor: not-allowed;
+            background-color: #fff;
+            border-color: #ddd;
+        }
+        .clear{
+            clear: both;
+        }
+    </style>
+@endsection
+
 @section('content')
 
     <div class="admin-content-body">
@@ -8,6 +85,16 @@
         </div>
 
         <hr>
+
+        <div class="am-g">
+            <div class="am-u-sm-12 am-u-md-6">
+                <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                        <button type="button" class="am-btn am-btn-default" data-am-modal="{target: '#user-search'}"><span class="am-icon-search"></span> 搜索</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="am-g">
             <div class="am-u-sm-12">
@@ -38,6 +125,13 @@
                          @endforeach
                         </tbody>
                     </table>
+
+                    <div id="pull_right">
+                        <div class="pull-right">
+                            {!! $data->links() !!}
+                        </div>
+                    </div>
+
                     {{--<div class="am-cf">
                         共 15 条记录
                         <div class="am-fr">
@@ -59,6 +153,22 @@
     </div>
 
 @endsection
+
+<div class="am-modal am-modal-no-btn" tabindex="-1" id="user-search">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">搜索</div>
+        <div class="am-modal-bd">
+            <form class="am-form" data-normal action="" method="get">
+                <div class="am-form-group">
+                    <label for="user_phone">手机号</label>
+                    <input type="text" name="user_phone" id="user_phone">
+                </div>
+                <button type="submit" class="am-btn am-btn-primary am-btn-block">搜索</button>
+                <button type="button" class="am-btn am-btn-default  am-btn-block" data-am-modal-close>取消</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 @section('script')
 

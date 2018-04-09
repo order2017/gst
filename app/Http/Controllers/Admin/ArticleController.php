@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Article;
+use App\Common\Common;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -32,11 +33,12 @@ class ArticleController extends Controller
     }
 
     /**
+     * @param Common $common
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index() {
+    public function index(Common $common) {
 
-        $data = Article::orderBy('updated_at','desc')->paginate(15);
+        $data = $common->searchKey->Search(Article::query()->orderBy('updated_at','desc'),['article_name'],'15');
 
         return view('admin.article-list',['data'=>$data,'type'=>$this->TypeList()]);
 
