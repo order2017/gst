@@ -60,6 +60,10 @@ Route::group(['namespace' => 'Mobile'],function (){
         Route::get('/user-password', 'UserController@userPassword');
         Route::post('/user-password', 'UserController@userPasswordStore');
 
+        // 用户发布
+        Route::get('/user-push','UserController@userPush');
+        Route::post('/user-push','UserController@userPushStore');
+
         // 用户退出
         Route::get('/logout', 'UserController@logout');
 

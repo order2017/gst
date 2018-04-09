@@ -2,14 +2,37 @@
 
 namespace App\Http\Controllers\Mobile;
 
+use App\Article;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use Cache;
 
 class UserController extends Controller
 {
+    /**
+     * @return mixed
+     */
+    protected function TypeList(){
+
+        $data = DB::select("select article_types.*,concat(type_path,type_id) p from article_types order by p");
+
+        foreach ($data as $key => $value) {
+
+            $arr=explode(',', $value->type_path);
+
+            $size=count($arr);
+
+            $value->size=$size-2;
+
+            $value->html=str_repeat('|----', $size-2).$value->type_name;
+        }
+
+        return $data;
+
+    }
 
     /**
      * 用户登录
@@ -208,6 +231,36 @@ class UserController extends Controller
         }else{
 
             return back()->with('mgs','0');
+
+        }
+
+    }
+
+    /**
+     * 用户发布
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function userPush() {
+
+        return view('mobile.user.user-push',['data'=>$this->TypeList()]);
+
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function userPushStore(Request $request) {
+
+        try {
+
+            Article::create(array_merge($request->except(['article_picture']),['article_picture'=>Article::uploadImg('article_picture')]));
+
+            return back()->with('message','1');
+
+        } catch (\Exception $e) {
+
+            return back()->with('message','0');
 
         }
 
