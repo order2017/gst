@@ -20,6 +20,13 @@
                     </p>
                 </div>
             </a>
+            <a href="{{ url('/article-view?type_id=8') }}" class="weui_grid" style="padding: 5px;">
+                <div class="weui_grid_icon" style="width: 100%; height: 80px; background-color: #0071bc; text-align: center;">
+                    <p style="padding-top: 30px; color: #fff;">
+                        品牌拓展
+                    </p>
+                </div>
+            </a>
             <a href="{{ url('/article-view?type_id=5') }}" class="weui_grid" style="padding: 5px;">
                 <div class="weui_grid_icon" style="width: 100%; height: 80px; background-color: #9bc9db; text-align: center;">
                     <p style="padding-top: 30px; color: #000;">
@@ -38,13 +45,6 @@
                 <div class="weui_grid_icon" style="width: 100%; height: 80px; background-color: #fcdda5; text-align: center;">
                     <p style="padding-top: 30px; color: #000;">
                         设备买卖
-                    </p>
-                </div>
-            </a>
-            <a href="{{ url('/article-view?type_id=8') }}" class="weui_grid" style="padding: 5px;">
-                <div class="weui_grid_icon" style="width: 100%; height: 80px; background-color: #0071bc; text-align: center;">
-                    <p style="padding-top: 30px; color: #fff;">
-                        品牌拓展
                     </p>
                 </div>
             </a>

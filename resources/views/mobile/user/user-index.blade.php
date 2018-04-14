@@ -25,7 +25,7 @@
                     </div>
                     <div class="bd">
 
-                        <div class="weui_cells weui_cells_radio" onclick="javascript:window.location='/user-push'">
+                        <div class="weui_cells weui_cells_radio" {{--onclick="javascript:window.location='/user-push'"--}} onclick="Fb()">
                             <label class="weui_cell weui_check_label" for="x12">
                                 <div class="weui_cell_bd weui_cell_primary">
                                     <p style="font-size: 14px;">VIP会员 免费发布信息</p>
