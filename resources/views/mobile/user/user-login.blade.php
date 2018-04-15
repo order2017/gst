@@ -41,7 +41,7 @@
                             </div>
                             <div class="weui_cells_tips">
                                 <a href="{{ url('/user-register') }}" class="weui_btn weui_btn_mini weui_btn_primary">用户注册</a>&nbsp;&nbsp;
-                                <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_default">找回密码</a>
+                                <a href="{{ url('/seek-password') }}" class="weui_btn weui_btn_mini weui_btn_default">找回密码</a>
                             </div>
                             <div class="weui_btn_area">
                                 <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips" onclick="Login()">确定</a>
@@ -64,6 +64,8 @@
             <script>layer.msg('请登录!');</script>
         @elseif(Session::get('message')=='3')
             <script>layer.msg('退出成功!');</script>
+        @elseif(Session::get('message')=='6')
+            <script>layer.msg('密码找回成功!');</script>
         @endif
     @endif
 

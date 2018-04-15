@@ -24,8 +24,7 @@ class LoginSigninRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_name' => 'required',
-            'user_name' => 'exists:users',
+            'user_name' => 'required|exists:users',
             'password' => 'required|min:6',
         ];
     }

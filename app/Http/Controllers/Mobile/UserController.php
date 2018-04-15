@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Mobile;
 
 use App\Article;
+use App\Http\Requests\SeekPasswordRequest;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -263,6 +264,86 @@ class UserController extends Controller
             return back()->with('message','0');
 
         }
+
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function SeekPassword() {
+
+        return view('mobile.user.seek-password');
+
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function SeekPasswordStore(Request $request) {
+
+        if (empty($request->get('user_phone'))){
+            return back()->with('message','0');
+        }elseif(empty($request->get('user_phone_yz'))){
+            return back()->with('message','1');
+        }
+
+        $data = User::where('user_phone',$request->get('user_phone'))->first();
+
+        if (empty($data['user_phone']) == $request->get('user_phone')){
+            return back()->with('message','2');
+        }
+
+        $cacheSms = Cache::get('sms');
+        if ($request->get('user_phone_yz') != $cacheSms){
+            return back()->with('message','3');
+        }
+
+        return redirect('/set-password?user_phone='.$data['user_phone']);
+
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function SetPassword(Request $request){
+        if (empty($request->get('user_phone'))){
+            return redirect('/seek-password')->with('message','4');
+        }else{
+            return view('mobile.user.set-password');
+        }
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function SetPasswordStore(Request $request){
+
+        if (!empty($request->get('password')) && !empty($request->get('fixed_password'))){
+
+            if ($request->get('password') == $request->get('fixed_password')) {
+
+                    $data = User::where('user_phone',$request->get('user_phone'))->first();
+                    if ($data){
+
+                        User::where('user_id',$data['user_id'])->update(['password'=>bcrypt($request->get('password'))]);
+
+                        return redirect('/user-login')->with('message','6');
+
+                    }else{
+                        return redirect('/seek-password')->with('message','4');
+                    }
+
+            }else{
+
+                return back()->with('message','1');
+
+            }
+
+        }else{
+            return back()->with('message','0');
+        }
+
 
     }
 

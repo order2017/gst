@@ -25,6 +25,14 @@ Route::group(['namespace' => 'Mobile'],function (){
     Route::get('/user-register','UserController@register');
     Route::post('/user-register','UserController@registerSubmit');
 
+    // 找回密码
+    Route::get('/seek-password','UserController@SeekPassword');
+    Route::post('/seek-password','UserController@SeekPasswordStore');
+
+    // 设置密码
+    Route::get('/set-password','UserController@SetPassword');
+    Route::post('/set-password','UserController@SetPasswordStore');
+
     // 发送验证码
     Route::post('/send','UserController@Send');
 
