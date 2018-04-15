@@ -29,6 +29,8 @@ class User extends Authenticatable
         'password',
         'user_type',
         'user_status',
+        'user_money',
+        'user_number',
         'wechat_number',
         'openid',
         'nickname',
@@ -62,6 +64,29 @@ class User extends Authenticatable
     public function getUserTypeTextAttribute()
     {
         return empty($this->user_type) ? '普通会员' : self::UserTypeList()[$this->user_type];
+    }
+
+    /**
+     * @return string
+     */
+    public function getUserMoneyAttribute() {
+
+        if (empty($this->attributes['user_money'])) {
+            return "0";
+        }else{
+            return $this->attributes['user_money'];
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function getUserNumberAttribute() {
+        if (empty($this->attributes['user_number'])) {
+            return "0";
+        }else{
+            return $this->attributes['user_number'];
+        }
     }
 
 }

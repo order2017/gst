@@ -25,7 +25,9 @@
                     </div>
                     <div class="bd">
 
-                        <div class="weui_cells weui_cells_radio" {{--onclick="javascript:window.location='/user-push'"--}} onclick="Fb()">
+                        <div class="weui_cells weui_cells_radio"
+                        @if($data['user_money']<=0) onclick="Fb()" @else onclick="javascript:window.location='/user-push'" @endif
+                        >
                             <label class="weui_cell weui_check_label" for="x12">
                                 <div class="weui_cell_bd weui_cell_primary">
                                     <p style="font-size: 14px;">VIP会员 免费发布信息</p>
@@ -69,7 +71,7 @@
                         <div class="weui_cells weui_cells_access">
                             <a class="weui_cell" href="/user-qrcode">
                                 <div class="weui_cell_bd weui_cell_primary">
-                                    <p style="font-size: 14px; color: #5a5959;">当前余额：&yen; 0.00 元</p>
+                                    <p style="font-size: 14px; color: #5a5959;">当前余额：&yen; {{ $data['user_money'] }} 元</p>
                                 </div>
                                 <div class="weui_cell_ft">
                                     <span style="font-size: 14px; color: red;">去充值</span>
@@ -77,7 +79,7 @@
                             </a>
                             <a class="weui_cell" href="javascript:;">
                                 <div class="weui_cell_bd weui_cell_primary">
-                                    <p style="font-size: 14px; color: #5a5959;">浏览信息次数：0 次</p>
+                                    <p style="font-size: 14px; color: #5a5959;">浏览信息次数：{{ $data['user_number'] }} 次</p>
                                 </div>
                                 <div class="weui_cell_ft">
                                 </div>
@@ -101,7 +103,7 @@
 @section('script')
     <script type="text/javascript">
         function Fb() {
-            layer.msg('您的余额不足100元!');
+            layer.msg('您的余额不足10元!');
         }
     </script>
 @endsection

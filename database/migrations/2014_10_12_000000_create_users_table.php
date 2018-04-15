@@ -19,6 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('user_name',45)->nullable()->comment('用户名称');
             $table->string('user_phone',32)->nullable()->unique()->comment('用户手机号');
             $table->string('password')->comment('用户密码');
+            $table->string('user_money',32)->nullable()->comment('用户余额');
+            $table->string('user_number',128)->nullable()->comment('用户浏览次数');
 
             $table->tinyInteger('user_type')->default('0')->comment('用户类型');
             $table->tinyInteger('user_status')->default('0')->comment('用户状态');
