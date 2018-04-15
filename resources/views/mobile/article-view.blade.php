@@ -68,7 +68,7 @@
 
                 <div class="main clearfix">
                     @foreach($data as $list)
-                        <div onclick="window.location='{{ url('/article-details?article_id='.$list['article_id']) }}'">
+                        <div onclick="window.location='{{ url('/article-details?article_id='.$list['article_id'].'&type_id='.request('type_id')) }}'">
                             <img src="{{ \App\Article::TitlePic($list['article_picture']) }}" alt="" width="100%" height="100px">
                             <p>{{ str_limit($list['article_name'], $limit = 20, $end = '...') }}</p>
                         </div>
@@ -81,4 +81,15 @@
     </div>
 </div>
 
+@endsection
+
+@section('script')
+    {{--<script>
+        layer.open({
+            type: 1,
+            skin: 'layui-layer-rim', //加上边框
+            area: ['420px', '240px'], //宽高
+            content: 'html内容'
+        });
+    </script>--}}
 @endsection

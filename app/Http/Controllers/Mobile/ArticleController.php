@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Mobile;
 
 use App\Article;
 use App\Common\Common;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
