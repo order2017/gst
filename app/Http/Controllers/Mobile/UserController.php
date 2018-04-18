@@ -72,7 +72,7 @@ class UserController extends Controller
             return ['error'=>'用户名不存在'];
         }
 
-        if (!empty($user['user_type'])==30){
+        if ($user['user_id']==1){
             return ['error'=>'无法访问!'];
         }
 
@@ -254,6 +254,14 @@ class UserController extends Controller
     public function userPushStore(Request $request) {
 
         try {
+
+            $data = User::where('user_id',session('mobile_user')['user_id'])->first();
+
+            if ($data['user_money']=="0"){
+               return redirect('/user-index')->with('message','4');
+            }else{
+                User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-1)]);
+            }
 
             Article::create(array_merge($request->except(['article_picture']),['article_picture'=>Article::uploadImg('article_picture')]));
 

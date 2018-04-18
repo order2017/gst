@@ -106,4 +106,10 @@
             layer.msg('您的余额不足10元!');
         }
     </script>
+
+    @if(Session::has('message'))
+        @if(Session::get('message')==4)
+            <script>layer.msg('您的余额不足10元，请充值！');</script>
+        @endif
+    @endif
 @endsection
