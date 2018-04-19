@@ -102,7 +102,7 @@
                     <table class="am-table am-table-striped am-table-hover table-main">
                         <thead>
                         <tr>
-                            <th class="table-title">用户名</th><th class="table-type">手机号</th><th class="table-author am-hide-sm-only">微信号</th><th class="table-title">会员类型</th><th class="table-date am-hide-sm-only">注册日期</th><th class="table-set">操作</th>
+                            <th class="table-title">用户名</th><th class="table-type">手机号</th><th class="table-author am-hide-sm-only">微信号</th><th class="table-title">会员类型</th><th class="table-title">余额</th><th class="table-title">浏览次数</th><th class="table-date am-hide-sm-only">注册日期</th><th class="table-set">操作</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -112,6 +112,8 @@
                             <td>{{ $list['user_phone'] }}</td>
                             <td>{{ $list['wechat_number'] }}</td>
                             <td>{{ $list['user_type_text'] }}</td>
+                            <td>{{ $list['user_money'] }}</td>
+                            <td>{{ $list['user_number'] }}</td>
                             <td>{{ $list['created_at'] }}</td>
                             <td>
                                 <div class="am-btn-toolbar">

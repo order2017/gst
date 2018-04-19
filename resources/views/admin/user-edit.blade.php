@@ -39,6 +39,13 @@
                 </div>
 
                 <div class="am-form-group">
+                    <label for="user_money" class="am-u-sm-3 am-form-label">充值金额</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="user_money" name="user_money" value="{{ $data['user_money'] }}" required>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
                     <label for="user_type" class="am-u-sm-3 am-form-label">会员类型</label>
                     <div class="am-u-sm-9">
                         <select id="user_type" name="user_type" required>

@@ -137,6 +137,7 @@ class UserController extends Controller
         }
 
         if (User::create(array_merge(array_except($arr,['password']),['password'=>bcrypt($arr['password'])]))){
+            Cache::forget('sms');
             return ['success'=>'注册成功'];
         }else{
             return ['success'=>'注册失败'];
@@ -302,11 +303,15 @@ class UserController extends Controller
         }
 
         $cacheSms = Cache::get('sms');
-        if ($request->get('user_phone_yz') != $cacheSms){
+
+        if ($request->get('user_phone_yz') == $cacheSms){
+
+            Cache::forget('sms');
+            return redirect('/set-password?user_phone='.$data['user_phone']);
+
+        }else{
             return back()->with('message','3');
         }
-
-        return redirect('/set-password?user_phone='.$data['user_phone']);
 
     }
 

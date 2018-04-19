@@ -69,6 +69,11 @@ class ArticleController extends Controller
      */
     public function details(Request $request) {
 
+        if (!empty(session('mobile_user')['user_id'])){
+            $res = User::where('user_id',session('mobile_user')['user_id'])->first();
+            User::where('user_id',session('mobile_user')['user_id'])->update(['user_number'=>($res['user_number']+1)]);
+        }
+
         $data = Article::find($request->get('article_id'));
 
         if (empty($data)){
