@@ -128,9 +128,9 @@ class UserController extends Controller
             return ['error'=>'输入的验证码错误'];
         }
 
-        $query = User::where('user_phone',$arr['user_phone'])->get();
+        $query = User::where('user_phone',$arr['user_phone'])->first();
 
-        $result = empty($query[0]['user_phone']) ? '':$query[0]['user_phone'];
+        $result = empty($query['user_phone']) ? '':$query['user_phone'];
 
         if ($result==$arr['user_phone']){
             return ['error'=>'手机号已经存在'];
