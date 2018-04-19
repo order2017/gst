@@ -50,6 +50,7 @@
 
                                 </div>
                             @else
+                                <div class="weui_cells_title" style="color:green;" onclick="javascript:window.location='/user-login'">我来发信息~(免费发布，免费推广，还有红包拿)</div>
                                 <div class="weui_cells_title" style="color:red;" onclick="javascript:window.location='/user-login'">请登录 、查看联系方式</div>
                             @endif
                             <hr>
