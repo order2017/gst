@@ -59,7 +59,12 @@
                                 <i class="weui_icon_search"></i>
                                 <input type="search" class="weui_search_input" id="search_input" name="article_name" @if(!empty(request('article_name'))) value="{{ request('article_name') }}" @endif placeholder="请输入搜索的信息">
                                 <input type="hidden" name="type_id" value="{{ request('type_id') }}">
-                                <input type="submit" value="立即搜索" class="weui_icon_clear" id="search_clear" style="height: 30px;">
+                                <input type="submit" value="立即搜索" class="weui_icon_clear" id="search_clear" style="height: 30px; margin-right: 80px;">
+                                @if(session()->has('mobile_user'))
+                                    <input type="button" value="发布信息" onclick="javascript:window.location='/user-push'" class="weui_icon_clear" id="search_clear" style="height: 30px;">
+                                @else
+                                    <input type="button" value="发布信息" onclick="javascript:window.location='/user-register'" class="weui_icon_clear" id="search_clear" style="height: 30px;">
+                                @endif
                             </div>
                         </form>
                     </div>

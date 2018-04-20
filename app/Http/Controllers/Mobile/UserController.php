@@ -244,7 +244,13 @@ class UserController extends Controller
      */
     public function userPush() {
 
-        return view('mobile.user.user-push',['data'=>$this->TypeList()]);
+        $data = User::where('user_id',session('mobile_user')['user_id'])->first();
+
+        if ($data['user_money']=="0"){
+            return redirect('/user-qrcode')->with('message','4');
+        }else{
+            return view('mobile.user.user-push',['data'=>$this->TypeList()]);
+        }
 
     }
 
