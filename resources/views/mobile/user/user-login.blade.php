@@ -47,6 +47,16 @@
                                 <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips" onclick="Login()">确定</a>
                             </div>
                         </form>
+                        <div style="padding: 30px 20px 20px 20px;">
+                            普通会员：发布信息一条奖励十元，查阅一条信息收费十元。<br>
+
+                            VIP 会员：年费一千元，免费查阅发布信息。<br>
+
+                            代理会员:凡代理会员发布的信息，顾客查阅信息所得费用代理会员与公司对半分。<br>
+
+                            广商通商业共享<br>
+                            网络招商部
+                        </div>
                     </div>
                 </div>
             </div>
