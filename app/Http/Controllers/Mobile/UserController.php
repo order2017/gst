@@ -267,7 +267,7 @@ class UserController extends Controller
             if ($data['user_money']=="0"){
                return redirect('/user-index')->with('message','4');
             }else{
-                User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-1)]);
+                User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-100)]);
             }
 
             Article::create(array_merge($request->except(['article_picture']),['article_picture'=>Article::uploadImg('article_picture')]));
