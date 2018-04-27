@@ -267,7 +267,22 @@ class UserController extends Controller
             if ($data['user_money']=="0"){
                return redirect('/user-index')->with('message','4');
             }else{
-                User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-100)]);
+                if ($request->get('article_type')==3){ //发布商场招商信息奖励十元一条，
+                    User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']+10)]);
+                }elseif($request->get('article_type')==4){ // 发布商业招商信息奖励十元一条，
+                    User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']+10)]);
+                }elseif($request->get('article_type')==5){ // 发布商场买卖信息收费五十元一条
+                    User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-50)]);
+                }elseif($request->get('article_type')==6){ // 发布商业买卖信息收费五十元一条
+                    User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-50)]);
+                }elseif($request->get('article_type')==7){ // 不扣
+
+                }elseif($request->get('article_type')==8){ // 不扣
+
+                }else{ // 不扣
+
+                }
+
             }
 
             Article::create(array_merge($request->except(['article_picture']),['article_picture'=>Article::uploadImg('article_picture')]));

@@ -39,9 +39,27 @@
                                     $userData = \App\User::where('user_id',session()->get('mobile_user')['user_id'])->first();
                                 ?>
                                 @if($userData['user_money']>=50)
+
                                     <?php
-                                        \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-50)]);
+
+                                            if($_GET['type_id']==3){ // 看商场招商信息收费10元一次，
+                                                \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-10)]);
+                                            }elseif($_GET['type_id']==4){ // 看商业招商信息收费10元一次，
+                                                \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-10)]);
+                                            }elseif($_GET['type_id']==8){ //看品牌拓展信息收费十元一次，
+                                                \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-10)]);
+                                            }elseif($_GET['type_id']==5){ //看商场买卖信息收费五十元一次
+                                                \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-50)]);
+                                            }elseif($_GET['type_id']==6){ //看商业买卖信息收费五十元一次。
+                                                \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-50)]);
+                                            }elseif($_GET['type_id']==7){ //免费看
+
+                                            }else{
+                                                goto goEnd;
+                                            }
+
                                     ?>
+
                                 <div class="weui_cells_title" style="color:green;" onclick="javascript:window.location='/user-qrcode'">您当前是：普通会员、升级VIP会员了解更多信息！</div>
                                 <div class="weui_cells weui_cells_access">
                                     <a class="weui_cell" href="javascript:;">
@@ -55,7 +73,9 @@
                                         </div>
                                     </a>
                                 </div>
+
                                 @else
+                                    <?php goEnd: ?>
                                     <div class="weui_cells_title" style="color:green;" onclick="javascript:window.location='/user-index'">我来发信息~(免费发布，免费推广，还有红包拿)</div>
                                     <div class="weui_cells_title" style="color:red;" onclick="javascript:window.location='/user-qrcode'">您的余额低于100元，请充值 、立即查看联系咨询服务！</div>
                                 @endif
