@@ -72,6 +72,11 @@
                                             <p style="color:red; margin: 0;">财富热线：{{ $data['article_tel'] }}</p>
                                         </div>
                                     </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:red; margin: 0;">财富地址：{{ $data['article_add'] }}{{ $data['article_street'] }}</p>
+                                        </div>
+                                    </a>
                                 </div>
 
                                 @else

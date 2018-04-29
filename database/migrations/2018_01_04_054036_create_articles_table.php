@@ -23,6 +23,8 @@ class CreateArticlesTable extends Migration
             $table->string('article_qq',15)->nullable()->comment('文章QQ');
             $table->tinyInteger('article_type')->default('0')->comment('文章类型');
             $table->longText('article_content')->nullable()->comment('文章内容');
+            $table->string('article_add')->nullable()->comment('文章地址');
+            $table->string('article_street')->nullable()->comment('文章街道');
 
             $table->timestamps();
             $table->softDeletes();

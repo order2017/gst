@@ -21,6 +21,8 @@ class Article extends Model
         'article_qq',
         'article_type',
         'article_content',
+        'article_add',
+        'article_street',
     ];
 
     /**

@@ -1,6 +1,8 @@
 @extends('layouts.index')
 
 @section('style')
+    <link rel="stylesheet" type="text/css" href="https://topoadmin.github.io/address/dist/amazeui.min.css">
+    <link rel="stylesheet" type="text/css" href="https://topoadmin.github.io/address/dist/amazeui.address.css">
     <style type="text/css">
         .weui_grid_icon + .weui_grid_label {
             margin-top: 10px;
@@ -77,7 +79,7 @@
 
                                 <div class="weui_cell weui_cell_select weui_select_after">
                                     <div class="weui_cell_hd">
-                                        <label for="" class="weui_label">文章类型：</label>
+                                        <label for="" class="weui_label">类型：</label>
                                     </div>
                                     <div class="weui_cell_bd weui_cell_primary">
                                         <select class="weui_select" name="article_type" required>
@@ -97,8 +99,29 @@
                                 <div class="weui_cells weui_cells_form">
                                     <div class="weui_cell">
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <textarea class="weui_textarea" name="article_content" placeholder="请输入内容" rows="3" required></textarea>
+                                            <textarea class="weui_textarea" name="article_content" placeholder="请输入内容" rows="5" required></textarea>
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="weui_cell">
+                                    <div class="weui_cell_hd"><label class="weui_label">地址：</label></div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        {{----}}
+                                        <div class="am-form-group am-input-group" id="address2">
+                                            <input readonly type="text" class="weui_input" name="article_add" placeholder="请选择地址" required="">
+                                        </div>
+                                        {{----}}
+                                    </div>
+                                </div>
+                                <div class="weui_cell">
+                                    <div class="weui_cell_hd"><label class="weui_label">街道：</label></div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        {{----}}
+                                        <div class="am-form-group am-input-group" id="address2">
+                                            <input type="text" class="weui_input" name="article_street" placeholder="请输入街道" required>
+                                        </div>
+                                        {{----}}
                                     </div>
                                 </div>
 
@@ -155,4 +178,23 @@
         @endif
     @endif
 
+    <script src="https://topoadmin.github.io/address/dist/amazeui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://topoadmin.github.io/address/dist/iscroll.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://topoadmin.github.io/address/dist/address.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            //	带底部的
+            $("#address2").address({
+                prov: "广东省",
+                city: "深圳市",
+                district: "光明新区",
+                scrollToCenter: true,
+                footer: true,
+                selectEnd: function(json) {
+                   // console.log(JSON.stringify(json));
+                }
+            });
+        });
+    </script>
 @endsection
