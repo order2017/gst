@@ -275,10 +275,10 @@ class UserController extends Controller
                     User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-50)]);
                 }elseif($request->get('article_type')==6){ // 发布商业买卖信息收费五十元一条
                     User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-50)]);
-                }elseif($request->get('article_type')==7){ // 不扣
-
-                }elseif($request->get('article_type')==8){ // 不扣
-
+                }elseif($request->get('article_type')==7){ // 发布设备买卖信息奖励十元一条，
+                    User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']+10)]);
+                }elseif($request->get('article_type')==8){ // 发布品牌拓展信息奖励十元一条，
+                    User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']+10)]);
                 }else{ // 不扣
 
                 }
