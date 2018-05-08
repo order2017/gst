@@ -25,12 +25,13 @@
                     </div>
                     <div class="bd">
 
-                        <div class="weui_cells weui_cells_radio"
+                        {{--<div class="weui_cells weui_cells_radio"
                         @if($data['user_money']<=0) onclick="Fb()" @else onclick="javascript:window.location='/user-push'" @endif
-                        >
+                        >--}}
+                        <div class="weui_cells weui_cells_radio" onclick="javascript:window.location='/user-push'" >
                             <label class="weui_cell weui_check_label" for="x12">
                                 <div class="weui_cell_bd weui_cell_primary">
-                                    <p style="font-size: 14px;">VIP会员 免费发布信息</p>
+                                    <p style="font-size: 14px;">免费发布信息</p>
                                 </div>
                                 <div class="weui_cell_ft">
                                     <input type="radio" class="weui_check" id="x12" checked="checked">
