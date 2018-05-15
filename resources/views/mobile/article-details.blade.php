@@ -64,17 +64,42 @@
                                 <div class="weui_cells weui_cells_access">
                                     <a class="weui_cell" href="javascript:;">
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <p style="color:red; margin: 0;">联系人：{{ $data['article_contact'] }}</p>
+                                            <p style="color:blue; margin: 0;">当前所在位置：{{ $add }}</p>
                                         </div>
                                     </a>
                                     <a class="weui_cell" href="javascript:;">
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <p style="color:red; margin: 0;">财富热线：{{ $data['article_tel'] }}</p>
+                                            <p style="color:red; margin: 0;">项目情况：</p>
                                         </div>
                                     </a>
                                     <a class="weui_cell" href="javascript:;">
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <p style="color:red; margin: 0;">财富地址：{{ $data['article_add'] }}{{ $data['article_street'] }}</p>
+                                            <p style="color:red; margin: 0;">面积：</p>
+                                        </div>
+                                    </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:red; margin: 0;">商圈：</p>
+                                        </div>
+                                    </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:red; margin: 0;">项目招商：</p>
+                                        </div>
+                                    </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:red; margin: 0;">项目电话：{{ $data['article_tel'] }}</p>
+                                        </div>
+                                    </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:red; margin: 0;">项目负责人：{{ $data['article_contact'] }}</p>
+                                        </div>
+                                    </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:red; margin: 0;">项目财富地址：{{ $data['article_add'] }}{{ $data['article_street'] }}</p>
                                         </div>
                                     </a>
                                 </div>

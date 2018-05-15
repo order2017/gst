@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Mobile;
 
 use App\Article;
 use App\Common\Common;
+use Ixudra\Curl\Facades\Curl;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -69,6 +70,19 @@ class ArticleController extends Controller
      */
     public function details(Request $request) {
 
+        // IP定位
+        $response = Curl::to('http://apis.map.qq.com/ws/location/v1/ip')->withData( array( 'ip' => $request->getClientIp(),'key'=>'N2VBZ-7UO6F-EZTJT-JI6EG-RPYK7-55F6J' ) )->get();
+        $arr = json_decode($response,true);
+
+        $location =empty($arr['result']['location']['lat']) ?  '39.984154,116.307490' : $arr['result']['location']['lat'].','.$arr['result']['location']['lng'];
+
+        // 逆地址解析(坐标位置描述)
+        $respon = Curl::to('http://apis.map.qq.com/ws/geocoder/v1/')->withData( array( 'location' =>$location,'key'=>'N2VBZ-7UO6F-EZTJT-JI6EG-RPYK7-55F6J','get_poi'=>1 ) )->get();
+        $addRes = json_decode($respon,true);
+
+        $ipAdd = empty($addRes['result']['address']) ? '广东省东莞市':$addRes['result']['address'];
+
+
         if (!empty(session('mobile_user')['user_id'])){
             $res = User::where('user_id',session('mobile_user')['user_id'])->first();
             User::where('user_id',session('mobile_user')['user_id'])->update(['user_number'=>($res['user_number']+1)]);
@@ -82,7 +96,7 @@ class ArticleController extends Controller
 
         }
 
-        return view('mobile.article-details',['data'=>$data]);
+        return view('mobile.article-details',['data'=>$data,'add'=>$ipAdd]);
 
     }
 }
