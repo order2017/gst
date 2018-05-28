@@ -23,6 +23,9 @@ class Article extends Model
         'article_content',
         'article_add',
         'article_street',
+        'article_sq',
+        'article_mj',
+        'article_pmt',
     ];
 
     /**

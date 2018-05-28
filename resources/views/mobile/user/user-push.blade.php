@@ -71,9 +71,9 @@
                                     </div>
                                 </div>
                                 <div class="weui_cell">
-                                    <div class="weui_cell_hd"><label class="weui_label">QQ：</label></div>
+                                    <div class="weui_cell_hd"><label class="weui_label">微信：</label></div>
                                     <div class="weui_cell_bd weui_cell_primary">
-                                        <input class="weui_input" type="number" name="article_qq" placeholder="输入你的QQ号码" required>
+                                        <input class="weui_input" type="text" name="article_qq" placeholder="输入你的微信" required>
                                     </div>
                                 </div>
 
@@ -95,7 +95,7 @@
                                     </div>
                                 </div>
 
-                                <div class="weui_cells_title" style="font-size: 16px; color: black;">内容：</div>
+                                <div class="weui_cells_title" style="font-size: 16px; color: black;">招商项目：</div>
                                 <div class="weui_cells weui_cells_form">
                                     <div class="weui_cell">
                                         <div class="weui_cell_bd weui_cell_primary">
@@ -103,6 +103,41 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="weui_cell">
+                                    <div class="weui_cell_hd"><label class="weui_label">商圈：</label></div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <input class="weui_input" type="text" name="article_sq" placeholder="请输入商圈" required>
+                                    </div>
+                                </div>
+
+                                <div class="weui_cell">
+                                    <div class="weui_cell_hd"><label class="weui_label">面积：</label></div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <input class="weui_input" type="text" name="article_mj" placeholder="请输入面积" required>
+                                    </div>
+                                </div>
+
+                                {{--<div class="weui_cell">
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <div class="weui_uploader">
+                                            <div class="weui_uploader_hd weui_cell">
+                                                <div class="weui_cell_bd weui_cell_primary">平面图片：</div>
+                                            </div>
+                                            <div class="weui_uploader_bd">
+                                                <ul class="weui_uploader_files">
+                                                    <li class="weui_uploader_file">
+                                                        <img id="article_pmt" class="weui_uploader_file" src="{{ asset('/uploads/gst_logo.png') }}" >
+                                                    </li>
+                                                </ul>
+                                                <div class="weui_uploader_input_wrp">
+                                                    <input class="weui_uploader_input" name="article_pmt" id="file" type="file" accept="image/*" multiple onchange="imgPreview(this,'article_pmt')">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>--}}
 
                                 <div class="weui_cell">
                                     <div class="weui_cell_hd"><label class="weui_label">地址：</label></div>

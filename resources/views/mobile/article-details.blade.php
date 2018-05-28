@@ -69,27 +69,32 @@
                                     </a>
                                     <a class="weui_cell" href="javascript:;">
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <p style="color:red; margin: 0;">项目情况：</p>
+                                            <p style="color:green; margin: 0;">项目情况</p>
                                         </div>
                                     </a>
                                     <a class="weui_cell" href="javascript:;">
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <p style="color:red; margin: 0;">面积：</p>
+                                            <p style="color:red; margin: 0;">面积：{{ $data['article_mj'] }}</p>
                                         </div>
                                     </a>
                                     <a class="weui_cell" href="javascript:;">
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <p style="color:red; margin: 0;">商圈：</p>
+                                            <p style="color:red; margin: 0;">商圈：{{ $data['article_sq'] }}</p>
                                         </div>
                                     </a>
                                     <a class="weui_cell" href="javascript:;">
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <p style="color:red; margin: 0;">项目招商：</p>
+                                            <p style="color:green; margin: 0;">项目招商</p>
                                         </div>
                                     </a>
                                     <a class="weui_cell" href="javascript:;">
                                         <div class="weui_cell_bd weui_cell_primary">
                                             <p style="color:red; margin: 0;">项目电话：{{ $data['article_tel'] }}</p>
+                                        </div>
+                                    </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:red; margin: 0;">项目微信号：{{ $data['article_qq'] }}</p>
                                         </div>
                                     </a>
                                     <a class="weui_cell" href="javascript:;">

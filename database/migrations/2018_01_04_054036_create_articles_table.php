@@ -26,6 +26,10 @@ class CreateArticlesTable extends Migration
             $table->string('article_add')->nullable()->comment('文章地址');
             $table->string('article_street')->nullable()->comment('文章街道');
 
+            $table->string('article_sq')->nullable()->comment('商圈');
+            $table->string('article_mj')->nullable()->comment('面积');
+            $table->string('article_pmt')->nullable()->comment('平面图');
+
             $table->timestamps();
             $table->softDeletes();
         });
