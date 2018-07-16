@@ -34,6 +34,60 @@
                             <p>
                                 <img src="{{ \App\Article::TitlePic($data['article_picture']) }}" width="100%" alt="{{ $data['article_name'] }}">
                             </p>
+                            @if(request('type_id')=="3" or request('type_id')=="4")
+                                {{--2018-07-16--}}
+                                <div class="weui_cells_title" style="color:green;" onclick="javascript:window.location='/user-qrcode'">您当前是：普通会员、升级VIP会员了解更多信息！</div>
+                                <div class="weui_cells weui_cells_access">
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:blue; margin: 0;">当前所在位置：{{ $add }}</p>
+                                        </div>
+                                    </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:green; margin: 0;">项目情况</p>
+                                        </div>
+                                    </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:red; margin: 0;">面积：{{ $data['article_mj'] }}</p>
+                                        </div>
+                                    </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:red; margin: 0;">商圈：{{ $data['article_sq'] }}</p>
+                                        </div>
+                                    </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:green; margin: 0;">项目招商</p>
+                                        </div>
+                                    </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:red; margin: 0;">项目电话：{{ $data['article_tel'] }}</p>
+                                        </div>
+                                    </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:red; margin: 0;">项目微信号：{{ $data['article_qq'] }}</p>
+                                        </div>
+                                    </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:red; margin: 0;">项目负责人：{{ $data['article_contact'] }}</p>
+                                        </div>
+                                    </a>
+                                    <a class="weui_cell" href="javascript:;">
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            <p style="color:red; margin: 0;">项目财富地址：{{ $data['article_add'] }}{{ $data['article_street'] }}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="weui_cells_title" style="color:green;" onclick="javascript:window.location='/user-login'">我来发信息~(免费发布，免费推广，还有红包拿)</div>
+                                <div class="weui_cells_title" style="color:red;" onclick="javascript:window.location='/user-login'">请登录 、查看联系方式</div>
+                                {{--2018-07-16--}}
+                                @else
                             @if(session()->has('mobile_user'))
                                 <?php
                                     $userData = \App\User::where('user_id',session()->get('mobile_user')['user_id'])->first();
@@ -113,6 +167,7 @@
                             @else
                                 <div class="weui_cells_title" style="color:green;" onclick="javascript:window.location='/user-login'">我来发信息~(免费发布，免费推广，还有红包拿)</div>
                                 <div class="weui_cells_title" style="color:red;" onclick="javascript:window.location='/user-login'">请登录 、查看联系方式</div>
+                            @endif
                             @endif
                             <hr>
                             <section class="article_content">
