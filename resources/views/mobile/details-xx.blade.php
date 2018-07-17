@@ -44,7 +44,7 @@
 										  
 								<p onclick="javascript:window.location='{{ url('/user-login')}}'">我注册会员，我发信息。连接会员中心。</p>
                                 <br>
-                                24小时客服电话:13823171801周生。
+                                24小时客服电话:13823771801周生。
                             </section>
                         </section>
                     </article>
