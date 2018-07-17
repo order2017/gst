@@ -38,11 +38,11 @@
                                 {{--2018-07-16--}}
                                 <div class="weui_cells_title" style="color:green;" onclick="javascript:window.location='/user-qrcode'">您当前是：普通会员、升级VIP会员了解更多信息！</div>
                                 <div class="weui_cells weui_cells_access">
-                                    <a class="weui_cell" href="javascript:;">
+                                    {{--<a class="weui_cell" href="javascript:;">
                                         <div class="weui_cell_bd weui_cell_primary">
                                             <p style="color:blue; margin: 0;">当前所在位置：{{ $add }}</p>
                                         </div>
-                                    </a>
+                                    </a>--}}
                                     <a class="weui_cell" href="javascript:;">
                                         <div class="weui_cell_bd weui_cell_primary">
                                             <p style="color:green; margin: 0;">项目情况</p>
@@ -112,11 +112,11 @@
 
                                 <div class="weui_cells_title" style="color:green;" onclick="javascript:window.location='/user-qrcode'">您当前是：普通会员、升级VIP会员了解更多信息！</div>
                                 <div class="weui_cells weui_cells_access">
-                                    <a class="weui_cell" href="javascript:;">
+                                    {{--<a class="weui_cell" href="javascript:;">
                                         <div class="weui_cell_bd weui_cell_primary">
                                             <p style="color:blue; margin: 0;">当前所在位置：{{ $add }}</p>
                                         </div>
-                                    </a>
+                                    </a>--}}
                                     <a class="weui_cell" href="javascript:;">
                                         <div class="weui_cell_bd weui_cell_primary">
                                             <p style="color:green; margin: 0;">项目情况</p>
