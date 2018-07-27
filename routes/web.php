@@ -64,6 +64,10 @@ Route::group(['namespace' => 'Mobile'],function (){
         // 用户个人微信二维码
         Route::get('/user-qrcode', 'UserController@userQrcode');
 
+        // 用户签约
+        Route::get('/user-contract', 'ContractController@index');
+        Route::post('/user-contract', 'ContractController@indexStore');
+
         // 用户修改密码
         Route::get('/user-password', 'UserController@userPassword');
         Route::post('/user-password', 'UserController@userPasswordStore');

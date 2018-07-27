@@ -40,6 +40,17 @@
                             </label>
                         </div>
 
+                        <div class="weui_cells weui_cells_access">
+                            <a class="weui_cell" href="/user-contract">
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <p style="font-size: 14px; color: #5a5959;">商家签约</p>
+                                </div>
+                                <div class="weui_cell_ft">
+                                    <span style="font-size: 14px; color: red;">去签约</span>
+                                </div>
+                            </a>
+                        </div>
+
                         <div class="weui_panel weui_panel_access">
 
                             <div class="weui_panel_hd">您当前级别：<span style="color: red;">{{ $data['user_type_text'] }}</span></div>
