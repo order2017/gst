@@ -68,6 +68,8 @@ Route::group(['namespace' => 'Mobile'],function (){
         Route::get('/user-contract', 'ContractController@index');
         Route::post('/user-contract', 'ContractController@indexStore');
 
+        Route::get('/user-contract-show', 'ContractController@indexShow');
+
         // 用户修改密码
         Route::get('/user-password', 'UserController@userPassword');
         Route::post('/user-password', 'UserController@userPasswordStore');

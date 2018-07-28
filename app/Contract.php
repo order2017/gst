@@ -32,6 +32,8 @@ class Contract extends Model
         'sc_qtf',
         'sc_htms',
 
+        'sc_status',
+
         'user_id',
     ];
 }

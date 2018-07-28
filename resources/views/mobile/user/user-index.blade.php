@@ -40,6 +40,7 @@
                             </label>
                         </div>
 
+                        @if(empty($contract->user_id))
                         <div class="weui_cells weui_cells_access">
                             <a class="weui_cell" href="/user-contract">
                                 <div class="weui_cell_bd weui_cell_primary">
@@ -50,6 +51,18 @@
                                 </div>
                             </a>
                         </div>
+                        @else
+                            <div class="weui_cells weui_cells_access">
+                                <a class="weui_cell" href="/user-contract-show">
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p style="font-size: 14px; color: #5a5959;">商家签约</p>
+                                    </div>
+                                    <div class="weui_cell_ft">
+                                        <span style="font-size: 14px; color: green;">您已签约</span>
+                                    </div>
+                                </a>
+                            </div>
+                        @endif
 
                         <div class="weui_panel weui_panel_access">
 

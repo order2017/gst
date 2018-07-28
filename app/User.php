@@ -89,4 +89,8 @@ class User extends Authenticatable
         }
     }
 
+    public function contract()
+    {
+        return $this->hasMany(Contract::class,'user_id');
+    }
 }

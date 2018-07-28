@@ -164,7 +164,9 @@ class UserController extends Controller
 
         $user = User::find(session('mobile_user')['user_id']);
 
-        return view('mobile.user.user-index',['data'=>$user]);
+        $contract = User::find($user['user_id'])->contract()->first();
+
+        return view('mobile.user.user-index',['data'=>$user,'contract'=>$contract]);
 
     }
 

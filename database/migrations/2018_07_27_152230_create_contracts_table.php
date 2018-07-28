@@ -41,6 +41,8 @@ class CreateContractsTable extends Migration
             $table->string('sc_qtf')->nullable()->comment('其它费');
             $table->text('sc_htms')->nullable()->comment('具体描述');
 
+            $table->integer('sc_status')->default(1)->comment('审核状态');
+
             $table->integer('user_id')->comment('用户ID');
 
             $table->timestamps();
