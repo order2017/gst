@@ -34,6 +34,9 @@
                             <p>
                                 <img src="{{ \App\Article::TitlePic($data['article_picture']) }}" width="100%" alt="{{ $data['article_name'] }}">
                             </p>
+
+                            <a href="{{ url('/shop-qrcode?type_id='.request('type_id')) }}" class="weui_btn weui_btn_default">网络代理签约</a>
+
                             @if(request('type_id')=="3" or request('type_id')=="4")
                                 {{--2018-07-16--}}
                                 <div class="weui_cells_title" style="color:green;" onclick="javascript:window.location='/user-qrcode'">您当前是：普通会员、升级VIP会员了解更多信息！</div>

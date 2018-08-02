@@ -56,6 +56,15 @@ Route::group(['namespace' => 'Mobile'],function (){
     // 文章详细
     Route::get('/article-details', 'ArticleController@details');
 
+    // 商场签约
+    Route::get('/shop-contract-one','ContractController@shopContractOne');
+    Route::post('/shop-contract-one','ContractController@shopContractOneStore');
+    Route::get('/shop-contract-two','ContractController@shopContractTwo');
+    Route::post('/shop-contract-two','ContractController@shopContractTwoStore');
+
+    // 签约二维码
+    Route::get('/shop-qrcode','ContractController@shopQrcode');
+
     Route::group(['middleware' => 'mobile.login'],function (){
 
         // 用户中心

@@ -48,4 +48,37 @@ class ContractController extends Controller
         return view('mobile.user.user-contract-show',['user'=>$user,'contract'=>$contract]);
 
     }
+
+    // 商场招租
+    public function shopContractOne(){
+
+        return view('mobile.contract.shop-contract-one');
+
+    }
+
+    public function shopContractOneStore(Request $request){
+
+       dd($request->all());
+
+    }
+
+    // 商场买卖
+    public function shopContractTwo(){
+
+        return view('mobile.contract.shop-contract-two');
+
+    }
+
+    public function shopContractTwoStore(Request $request){
+
+        dd($request->all());
+
+    }
+
+    // 签约二维码
+    public function shopQrcode() {
+
+        return view('mobile.contract.shop-qrcode');
+        
+    }
 }
