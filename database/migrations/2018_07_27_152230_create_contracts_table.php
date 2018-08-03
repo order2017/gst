@@ -47,6 +47,60 @@ class CreateContractsTable extends Migration
 
             $table->timestamps();
         });
+
+        // 商业招商签约
+        Schema::create('one_contracts', function (Blueprint $table) {
+            $table->increments('id');
+
+            $table->string('qy_cy')->nullable()->comment('餐饮');
+            $table->string('qy_js')->nullable()->comment('健身');
+            $table->string('qy_mrys')->nullable()->comment('美容养生');
+            $table->string('qy_dyy')->nullable()->comment('电影院');
+            $table->string('qy_jypx')->nullable()->comment('教育培训');
+            $table->string('qy_jd')->nullable()->comment('酒店');
+            $table->string('qy_bg')->nullable()->comment('宾馆');
+            $table->string('qy_qt')->nullable()->comment('其它');
+            $table->string('qy_zq')->nullable()->comment('租期');
+            $table->string('qy_zj')->nullable()->comment('租金');
+            $table->string('qy_yj')->nullable()->comment('押金');
+            $table->string('qy_mzq')->nullable()->comment('免租期');
+            $table->string('qy_jybz')->nullable()->comment('交付标准');
+            $table->string('qy_jse')->nullable()->comment('其它');
+
+            $table->string('qy_sctp')->nullable()->comment('图片');
+
+            $table->integer('qy_status')->default(1)->comment('审核状态');
+
+            $table->integer('user_id')->comment('用户ID');
+
+            $table->timestamps();
+        });
+
+        // 商场买卖签约
+        Schema::create('two_contracts', function (Blueprint $table) {
+            $table->increments('id');
+
+            $table->string('qy_sczq')->nullable()->comment('商场租期');
+            $table->string('qy_scmc')->nullable()->comment('商场名称');
+            $table->string('qy_shzq')->nullable()->comment('商户租期');
+            $table->string('qy_scjzj')->nullable()->comment('商场交租金');
+            $table->string('qy_shszj')->nullable()->comment('商户收租金');
+            $table->string('qy_scjyj')->nullable()->comment('商场交押金');
+            $table->string('qy_shsyj')->nullable()->comment('商户收押金');
+            $table->string('qy_scmj')->nullable()->comment('商场面积');
+            $table->string('qy_shmj')->nullable()->comment('商户面积');
+            $table->string('qy_sczrf')->nullable()->comment('商场转让费');
+            $table->string('qy_qt')->nullable()->comment('其它');
+
+            $table->string('qy_sctp')->nullable()->comment('图片');
+
+            $table->integer('qy_status')->default(1)->comment('审核状态');
+
+            $table->integer('user_id')->comment('用户ID');
+
+            $table->timestamps();
+        });
+
     }
 
     /**
@@ -57,5 +111,7 @@ class CreateContractsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('contracts');
+        Schema::dropIfExists('one_contracts');
+        Schema::dropIfExists('two_contracts');
     }
 }

@@ -30,7 +30,7 @@
                             <p class="page_desc" style="color:green; font-size: 16px;">网络代理签约</p>
                         </div>
                         <div class="bd">
-                            <form action="/user-contract-two" method="post">
+                            <form action="/shop-contract-two" method="post">
                                 {{ csrf_field() }}
                                 <div class="weui_cells_title">商场买卖</div>
                                 <div class="weui_cells weui_cells_form">
@@ -38,67 +38,67 @@
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">商场租期：</label></div>
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <input class="weui_input" type="text" name="sc_name" value="{{ old('sc_name') }}">
+                                            <input class="weui_input" type="text" name="qy_sczq" value="{{ old('qy_sczq') }}">
                                         </div>
                                     </div>
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">商场名称：</label></div>
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <input class="weui_input" type="text" name="sc_add" value="{{ old('sc_add') }}">
+                                            <input class="weui_input" type="text" name="qy_scmc" value="{{ old('qy_scmc') }}">
                                         </div>
                                     </div>
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">商户租期：</label></div>
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <input class="weui_input" type="text" name="sc_person" value="{{ old('sc_person') }}">
+                                            <input class="weui_input" type="text" name="qy_shzq" value="{{ old('qy_shzq') }}">
                                         </div>
                                     </div>
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">商场交租金：</label></div>
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <input class="weui_input" type="text" name="sc_tel" value="{{ old('sc_tel') }}">
+                                            <input class="weui_input" type="text" name="qy_scjzj" value="{{ old('qy_scjzj') }}">
                                         </div>
                                     </div>
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">商户收租金：</label></div>
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <input class="weui_input" type="text" name="sc_time" value="{{ old('sc_time') }}">
+                                            <input class="weui_input" type="text" name="qy_shszj" value="{{ old('qy_shszj') }}">
                                         </div>
                                     </div>
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">商场交押金：</label></div>
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <input class="weui_input" type="text" name="sc_time" value="{{ old('sc_time') }}">
+                                            <input class="weui_input" type="text" name="qy_scjyj" value="{{ old('qy_scjyj') }}">
                                         </div>
                                     </div>
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">商户收押金：</label></div>
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <input class="weui_input" type="text" name="sc_time" value="{{ old('sc_time') }}">
+                                            <input class="weui_input" type="text" name="qy_shsyj" value="{{ old('qy_shsyj') }}">
                                         </div>
                                     </div>
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">商场面积：</label></div>
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <input class="weui_input" type="text" name="sc_time" value="{{ old('sc_time') }}">
+                                            <input class="weui_input" type="text" name="qy_scmj" value="{{ old('qy_scmj') }}">
                                         </div>
                                     </div>
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">商户面积：</label></div>
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <input class="weui_input" type="text" name="sc_time" value="{{ old('sc_time') }}">
+                                            <input class="weui_input" type="text" name="qy_shmj" value="{{ old('qy_shmj') }}">
                                         </div>
                                     </div>
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">商场转让费：</label></div>
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <input class="weui_input" type="text" name="sc_time" value="{{ old('sc_time') }}">
+                                            <input class="weui_input" type="text" name="qy_sczrf" value="{{ old('qy_sczrf') }}">
                                         </div>
                                     </div>
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">其它：</label></div>
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <input class="weui_input" type="text" name="sc_time" value="{{ old('sc_time') }}">
+                                            <input class="weui_input" type="text" name="qy_qt" value="{{ old('qy_qt') }}">
                                         </div>
                                     </div>
 
