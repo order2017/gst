@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Mobile;
 
 use App\Contract;
+use App\OneContract;
+use App\TwoContract;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -58,7 +60,20 @@ class ContractController extends Controller
 
     public function shopContractOneStore(Request $request){
 
-       dd($request->all());
+        $request->flash();
+        if ($request['qy_zj']==""){
+            return back()->with('mgs','0');
+        }
+
+        $data = $request->except(['_token','user_id']);
+
+        $res = OneContract::create(array_merge($data,['user_id'=>session('mobile_user')->user_id]));
+
+        if ($res){
+            return back()->with('mgs','199');
+        }else{
+            return back()->with('mgs','188');
+        }
 
     }
 
@@ -71,7 +86,20 @@ class ContractController extends Controller
 
     public function shopContractTwoStore(Request $request){
 
-        dd($request->all());
+        $request->flash();
+        if ($request['qy_scmc']==""){
+            return back()->with('mgs','0');
+        }
+
+        $data = $request->except(['_token','user_id']);
+
+        $res = TwoContract::create(array_merge($data,['user_id'=>session('mobile_user')->user_id]));
+
+        if ($res){
+            return back()->with('mgs','199');
+        }else{
+            return back()->with('mgs','188');
+        }
 
     }
 

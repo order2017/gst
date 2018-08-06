@@ -147,11 +147,7 @@
 
     @if(Session::has('mgs'))
         @if(Session::get('mgs')=='0')
-            <script>layer.msg('商场名称不能为空!');</script>
-        @elseif(Session::get('mgs')=='1')
-            <script>layer.msg('联系人不能为空!');</script>
-        @elseif(Session::get('mgs')=='2')
-            <script>layer.msg('电话不能为空!');</script>
+            <script>layer.msg('租期不能为空!');</script>
         @elseif(Session::get('mgs')=='188')
             <script>layer.msg('签约申请失败!');</script>
         @elseif(Session::get('mgs')=='199')
