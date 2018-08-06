@@ -32,11 +32,7 @@
                             </section>
                         </article>
                         <div class="weui_btn_area">
-                            @if(request('type_id')=="3" || request('type_id')=="4" || request('type_id')=="8")
-                                <a href="{{ url('/shop-contract-one') }}" class="weui_btn weui_btn_primary">立即签约</a>
-                                @else
-                                <a href="{{ url('/shop-contract-two') }}" class="weui_btn weui_btn_primary">立即签约</a>
-                            @endif
+                            <a href="{{ url('/user-index?qy=1') }}" class="weui_btn weui_btn_primary">确定签约</a>
                             <a href="{{ url()->previous() }}" class="weui_btn weui_btn_warn">返回</a>
                         </div>
                     </div>

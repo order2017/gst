@@ -137,4 +137,8 @@
             <script>layer.msg('您的余额不足10元，请充值！');</script>
         @endif
     @endif
+
+    @if(!empty(request('qy')))
+        <script>layer.msg('签约成功！');</script>
+    @endif
 @endsection

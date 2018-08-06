@@ -130,7 +130,7 @@
             <script>
                 layer.msg('签约申请成功!');
                 setTimeout(function () {
-                    window.location.href="/user-index";
+                    window.location.href="/shop-qrcode";
                 },500)
             </script>
         @endif
