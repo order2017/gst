@@ -1,6 +1,8 @@
 @extends('layouts.index')
 
 @section('style')
+    <link rel="stylesheet" type="text/css" href="https://topoadmin.github.io/address/dist/amazeui.min.css">
+    <link rel="stylesheet" type="text/css" href="https://topoadmin.github.io/address/dist/amazeui.address.css">
     <style type="text/css">
         .weui_grid_icon + .weui_grid_label {
             margin-top: 10px;
@@ -53,6 +55,20 @@
                 </div>
                 <div class="bd">
 
+                    {{--地址用的--}}
+                    <form action="/article-view-s" method="get">
+                        <div class="weui_cell weui_cell_warn">
+                            <div class="weui_cell_hd"><label for="" class="weui_label">国家/地区</label></div>
+                            <div class="weui_cell_bd weui_cell_primary" id="address2">
+                                <input readonly type="text" class="weui_input" name="article_add" placeholder="请选择地区" @if(!empty(request('article_name'))) value="{{ request('article_name') }}" @endif>
+                            </div>
+                            <div class="weui_cell_ft">
+                                <input type="hidden" name="type_id" value="{{ request('type_id') }}">
+                                <input type="submit" value="确定" class="weui_icon_clear" id="search_clear" style="width: 80px; height: 30px;">
+                            </div>
+                        </div>
+                    </form>
+
                     <div class="weui_search_bar" id="search_bar">
                         <form class="weui_search_outer" action="/article-view" method="get">
                             <div class="weui_search_inner">
@@ -97,4 +113,24 @@
             content: 'html内容'
         });
     </script>--}}
+
+    <script src="https://topoadmin.github.io/address/dist/amazeui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://topoadmin.github.io/address/dist/iscroll.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://topoadmin.github.io/address/dist/address.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            //	带底部的
+            $("#address2").address({
+                prov: "广东省",
+                city: "深圳市",
+                district: "光明新区",
+                scrollToCenter: true,
+                footer: true,
+                selectEnd: function(json) {
+                    // console.log(JSON.stringify(json));
+                }
+            });
+        });
+    </script>
 @endsection

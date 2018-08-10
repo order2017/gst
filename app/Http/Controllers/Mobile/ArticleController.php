@@ -49,8 +49,24 @@ class ArticleController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function view(Request $request,Common $common) {
-
         $data = $common->searchKey->Search(Article::query()->where('article_type',$request->get('type_id','0'))->orderBy('updated_at','desc'),['article_name'],'100');
+
+        if (count($data)){
+
+            return view('mobile.article-view',['data'=>$data,'type'=>$this->TypeList()]);
+
+        }else{
+
+            return back()->with('message',0);
+
+        }
+
+    }
+
+    // 地址用的
+    public function view_add(Request $request,Common $common) {
+
+        $data = $common->searchKey->SearchOne(Article::query()->where('article_type',$request->get('type_id','0'))->orderBy('updated_at','desc'),['article_add'],'100');
 
         if (count($data)){
 

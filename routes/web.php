@@ -43,6 +43,8 @@ Route::group(['namespace' => 'Mobile'],function (){
 
     // 文章视图
     Route::get('/article-view', 'ArticleController@view');
+    // 地址
+    Route::get('/article-view-s', 'ArticleController@view_add');
 
     //----------
     // 商业详细

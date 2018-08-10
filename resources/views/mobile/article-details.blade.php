@@ -89,7 +89,7 @@
                                 <div class="weui_cells_title" style="color:red;" onclick="javascript:window.location='/user-login'">请登录 、查看联系方式</div>
                                 {{--2018-07-16--}}
 
-                                 @include('mobile.contract._contract')
+                                 {{--@include('mobile.contract._contract')--}}
 
                                 @else
 
@@ -168,13 +168,13 @@
                                     <?php goEnd: ?>
                                     <div class="weui_cells_title" style="color:green;" onclick="javascript:window.location='/user-index'">我来发信息~(免费发布，免费推广，还有红包拿)</div>
                                     <div class="weui_cells_title" style="color:red;" onclick="javascript:window.location='/user-qrcode'">您的余额低于100元，请充值 、立即查看联系咨询服务！</div>
-                                        @include('mobile.contract._contract')
+                                        {{--@include('mobile.contract._contract')--}}
                                 @endif
                             @else
                                 <div class="weui_cells_title" style="color:green;" onclick="javascript:window.location='/user-login'">我来发信息~(免费发布，免费推广，还有红包拿)</div>
                                 <div class="weui_cells_title" style="color:red;" onclick="javascript:window.location='/user-login'">请登录 、查看联系方式</div>
 
-                                @include('mobile.contract._contract')
+                                {{--@include('mobile.contract._contract')--}}
                                 
                             @endif
                             @endif
