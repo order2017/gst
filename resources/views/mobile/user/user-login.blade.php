@@ -47,11 +47,14 @@
                                 <a class="weui_btn weui_btn_primary" href="javascript:" id="showTooltips" onclick="Login()">确定</a>
                             </div>
                         </form>
-                        <div style="padding: 30px 20px 20px 20px;">
+                        <div style="padding: 30px 20px 8px 20px;">
                             普通会员:发布招商拓展信息，奖励10元一条，发布买卖信息，收费50元一条。<br>
                             免费查阅招商拓展信息，查阅买卖信息，收费50元一条。<br>
                             VIP会员:年费1000元。免费查阅和发布信息。<br>
                             代理会员:免费发布查阅信息，顾客查阅代理会员发布的信息，所得费用代理会员和本公司五五分成。
+                        </div>
+                        <div style="padding: 8px 20px 20px 20px;">
+                            深圳市网络招商电话：13823171801 广州市网络招商电话：18824181801
                         </div>
                     </div>
                 </div>

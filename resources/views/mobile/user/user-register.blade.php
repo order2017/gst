@@ -44,16 +44,16 @@
                                 <div class="weui_cell_bd weui_cell_primary">
                                     <input class="weui_input" type="number" name="user_phone" id="user_phone" placeholder="请输入手机号">
                                 </div>
-                                <div class="weui_cell_ft">
+                                {{--<div class="weui_cell_ft">
                                     <input type="button" class="weui_btn weui_btn_mini weui_btn_primary" value="发送验证码" onclick="sendCode(this)" />
-                                </div>
+                                </div>--}}
                             </div>
-                            <div class="weui_cell">
+                            {{--<div class="weui_cell">
                                 <div class="weui_cell_hd"><label class="weui_label">验证码</label></div>
                                 <div class="weui_cell_bd weui_cell_primary">
                                     <input class="weui_input" type="number" name="user_phone_yz" placeholder="请输入手机验证码">
                                 </div>
-                            </div>
+                            </div>--}}
 
                             <div class="weui_cell">
                                 <div class="weui_cell_hd"><label class="weui_label">密 码</label></div>

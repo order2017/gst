@@ -113,8 +113,6 @@ class UserController extends Controller
             return ['error'=>'微信号不能为空'];
         }elseif(empty($arr['user_phone'])){
             return ['error'=>'手机号不能为空'];
-        }elseif(empty($arr['user_phone_yz'])){
-            return ['error'=>'验证码不能为空'];
         }elseif(empty($arr['password'])){
             return ['error'=>'密码不能为空'];
         }elseif(empty($arr['fixed_password'])){
@@ -123,10 +121,10 @@ class UserController extends Controller
             return ['error'=>'密码与确认密码不一致'];
         }
 
-        $cacheSms = Cache::get('sms');
+        /*$cacheSms = Cache::get('sms');
         if ($arr['user_phone_yz'] != $cacheSms){
             return ['error'=>'输入的验证码错误'];
-        }
+        }*/
 
         $query = User::where('user_phone',$arr['user_phone'])->first();
 
