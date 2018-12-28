@@ -262,6 +262,8 @@ class UserController extends Controller
 
         try {
 
+            dd($request->all());
+
             $data = User::where('user_id',session('mobile_user')['user_id'])->first();
 
            // if ($data['user_money']=="0"){

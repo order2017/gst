@@ -118,11 +118,11 @@
                                     </div>
                                 </div>
 
-                                {{--<div class="weui_cell">
+                                <div class="weui_cell">
                                     <div class="weui_cell_bd weui_cell_primary">
                                         <div class="weui_uploader">
                                             <div class="weui_uploader_hd weui_cell">
-                                                <div class="weui_cell_bd weui_cell_primary">平面图片：</div>
+                                                <div class="weui_cell_bd weui_cell_primary">多图上传：</div>
                                             </div>
                                             <div class="weui_uploader_bd">
                                                 <ul class="weui_uploader_files">
@@ -131,13 +131,13 @@
                                                     </li>
                                                 </ul>
                                                 <div class="weui_uploader_input_wrp">
-                                                    <input class="weui_uploader_input" name="article_pmt" id="file" type="file" accept="image/*" multiple onchange="imgPreview(this,'article_pmt')">
+                                                    <input class="weui_uploader_input" name="article_pmt[]" id="file" type="file" accept="image/*" multiple onchange="imgPreview(this,'article_pmt')">
 
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>--}}
+                                </div>
 
                                 <div class="weui_cell">
                                     <div class="weui_cell_hd"><label class="weui_label">地址：</label></div>
