@@ -262,8 +262,6 @@ class UserController extends Controller
 
         try {
 
-            dd($request->all());
-
             $data = User::where('user_id',session('mobile_user')['user_id'])->first();
 
            // if ($data['user_money']=="0"){
@@ -287,7 +285,16 @@ class UserController extends Controller
 
            // }
 
-            Article::create(array_merge($request->except(['article_picture']),['article_picture'=>Article::uploadImg('article_picture')]));
+                $newArray = [
+                  '1' =>  Article::uploadImg('article_pmt1'),
+                  '2' =>  Article::uploadImg('article_pmt2'),
+                  '3' =>  Article::uploadImg('article_pmt3'),
+                  '4' =>  Article::uploadImg('article_pmt4'),
+                  '5' =>  Article::uploadImg('article_pmt5'),
+                  '6' =>  Article::uploadImg('article_pmt6'),
+                ];
+
+            Article::create(array_merge($request->except(['article_picture','article_pmt']),['article_picture'=>Article::uploadImg('article_picture'),'article_pmt'=>$newArray]));
 
             return back()->with('message','1');
 

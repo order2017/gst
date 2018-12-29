@@ -51,7 +51,7 @@ class Article extends Model
 
             if ($pic->isValid()) {
 
-                $filename = md5(time()).'.'.$pic->getClientOriginalExtension();
+                $filename = md5(time().str_random(10)).'.'.$pic->getClientOriginalExtension();
 
                 $pic->move(public_path('uploads'),$filename);
 

@@ -122,16 +122,121 @@
                                     <div class="weui_cell_bd weui_cell_primary">
                                         <div class="weui_uploader">
                                             <div class="weui_uploader_hd weui_cell">
-                                                <div class="weui_cell_bd weui_cell_primary">多图上传：</div>
+                                                <div class="weui_cell_bd weui_cell_primary">第一张图片：</div>
                                             </div>
                                             <div class="weui_uploader_bd">
                                                 <ul class="weui_uploader_files">
                                                     <li class="weui_uploader_file">
-                                                        <img id="article_pmt" class="weui_uploader_file" src="{{ asset('/uploads/gst_logo.png') }}" >
+                                                        <img id="article_pmt1" class="weui_uploader_file" src="{{ asset('/uploads/gst_logo.png') }}" >
                                                     </li>
                                                 </ul>
                                                 <div class="weui_uploader_input_wrp">
-                                                    <input class="weui_uploader_input" name="article_pmt[]" id="file" type="file" accept="image/*" multiple onchange="imgPreview(this,'article_pmt')">
+                                                    <input class="weui_uploader_input" name="article_pmt1" id="file" type="file" accept="image/*" multiple onchange="imgPreview(this,'article_pmt1')">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="weui_cell">
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <div class="weui_uploader">
+                                            <div class="weui_uploader_hd weui_cell">
+                                                <div class="weui_cell_bd weui_cell_primary">第二张图片：</div>
+                                            </div>
+                                            <div class="weui_uploader_bd">
+                                                <ul class="weui_uploader_files">
+                                                    <li class="weui_uploader_file">
+                                                        <img id="article_pmt2" class="weui_uploader_file" src="{{ asset('/uploads/gst_logo.png') }}" >
+                                                    </li>
+                                                </ul>
+                                                <div class="weui_uploader_input_wrp">
+                                                    <input class="weui_uploader_input" name="article_pmt2" id="file" type="file" accept="image/*" multiple onchange="imgPreview(this,'article_pmt2')">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="weui_cell">
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <div class="weui_uploader">
+                                            <div class="weui_uploader_hd weui_cell">
+                                                <div class="weui_cell_bd weui_cell_primary">第三张图片：</div>
+                                            </div>
+                                            <div class="weui_uploader_bd">
+                                                <ul class="weui_uploader_files">
+                                                    <li class="weui_uploader_file">
+                                                        <img id="article_pmt3" class="weui_uploader_file" src="{{ asset('/uploads/gst_logo.png') }}" >
+                                                    </li>
+                                                </ul>
+                                                <div class="weui_uploader_input_wrp">
+                                                    <input class="weui_uploader_input" name="article_pmt3" id="file" type="file" accept="image/*" multiple onchange="imgPreview(this,'article_pmt3')">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="weui_cell">
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <div class="weui_uploader">
+                                            <div class="weui_uploader_hd weui_cell">
+                                                <div class="weui_cell_bd weui_cell_primary">第四张图片：</div>
+                                            </div>
+                                            <div class="weui_uploader_bd">
+                                                <ul class="weui_uploader_files">
+                                                    <li class="weui_uploader_file">
+                                                        <img id="article_pmt4" class="weui_uploader_file" src="{{ asset('/uploads/gst_logo.png') }}" >
+                                                    </li>
+                                                </ul>
+                                                <div class="weui_uploader_input_wrp">
+                                                    <input class="weui_uploader_input" name="article_pmt4" id="file" type="file" accept="image/*" multiple onchange="imgPreview(this,'article_pmt4')">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="weui_cell">
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <div class="weui_uploader">
+                                            <div class="weui_uploader_hd weui_cell">
+                                                <div class="weui_cell_bd weui_cell_primary">第五张图片：</div>
+                                            </div>
+                                            <div class="weui_uploader_bd">
+                                                <ul class="weui_uploader_files">
+                                                    <li class="weui_uploader_file">
+                                                        <img id="article_pmt5" class="weui_uploader_file" src="{{ asset('/uploads/gst_logo.png') }}" >
+                                                    </li>
+                                                </ul>
+                                                <div class="weui_uploader_input_wrp">
+                                                    <input class="weui_uploader_input" name="article_pmt5" id="file" type="file" accept="image/*" multiple onchange="imgPreview(this,'article_pmt5')">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="weui_cell">
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <div class="weui_uploader">
+                                            <div class="weui_uploader_hd weui_cell">
+                                                <div class="weui_cell_bd weui_cell_primary">第六张图片：</div>
+                                            </div>
+                                            <div class="weui_uploader_bd">
+                                                <ul class="weui_uploader_files">
+                                                    <li class="weui_uploader_file">
+                                                        <img id="article_pmt6" class="weui_uploader_file" src="{{ asset('/uploads/gst_logo.png') }}" >
+                                                    </li>
+                                                </ul>
+                                                <div class="weui_uploader_input_wrp">
+                                                    <input class="weui_uploader_input" name="article_pmt6" id="file" type="file" accept="image/*" multiple onchange="imgPreview(this,'article_pmt6')">
 
                                                 </div>
                                             </div>
