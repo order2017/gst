@@ -246,11 +246,11 @@ class UserController extends Controller
 
         $data = User::where('user_id',session('mobile_user')['user_id'])->first();
 
-       /* if ($data['user_money']=="0"){
-            return redirect('/user-qrcode')->with('message','4');
-        }else{*/
-            return view('mobile.user.user-push',['data'=>$this->TypeList()]);
-       // }
+        /* if ($data['user_money']=="0"){
+             return redirect('/user-qrcode')->with('message','4');
+         }else{*/
+        return view('mobile.user.user-push',['data'=>$this->TypeList()]);
+        // }
 
     }
 
@@ -264,37 +264,28 @@ class UserController extends Controller
 
             $data = User::where('user_id',session('mobile_user')['user_id'])->first();
 
-           // if ($data['user_money']=="0"){
+            // if ($data['user_money']=="0"){
             //   return redirect('/user-index')->with('message','4');
-           // }else{
-                if ($request->get('article_type')==3){ //发布商场招商信息奖励十元一条，
-                    User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']+10)]);
-                }elseif($request->get('article_type')==4){ // 发布商业招商信息奖励十元一条，
-                    User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']+10)]);
-                }elseif($request->get('article_type')==5){ // 发布商场买卖信息收费五十元一条
-                    User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-50)]);
-                }elseif($request->get('article_type')==6){ // 发布商业买卖信息收费五十元一条
-                    User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-50)]);
-                }elseif($request->get('article_type')==7){ // 发布设备买卖信息奖励十元一条，
-                    User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']+10)]);
-                }elseif($request->get('article_type')==8){ // 发布品牌拓展信息奖励十元一条，
-                    User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']+10)]);
-                }else{ // 不扣
+            // }else{
+            if ($request->get('article_type')==3){ //发布商场招商信息奖励十元一条，
+                User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']+10)]);
+            }elseif($request->get('article_type')==4){ // 发布商业招商信息奖励十元一条，
+                User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']+10)]);
+            }elseif($request->get('article_type')==5){ // 发布商场买卖信息收费五十元一条
+                User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-50)]);
+            }elseif($request->get('article_type')==6){ // 发布商业买卖信息收费五十元一条
+                User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-50)]);
+            }elseif($request->get('article_type')==7){ // 发布设备买卖信息奖励十元一条，
+                User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']+10)]);
+            }elseif($request->get('article_type')==8){ // 发布品牌拓展信息奖励十元一条，
+                User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']+10)]);
+            }else{ // 不扣
 
-                }
+            }
 
-           // }
+            // }
 
-                $newArray = [
-                  '1' =>  Article::uploadImg('article_pmt1'),
-                  '2' =>  Article::uploadImg('article_pmt2'),
-                  '3' =>  Article::uploadImg('article_pmt3'),
-                  '4' =>  Article::uploadImg('article_pmt4'),
-                  '5' =>  Article::uploadImg('article_pmt5'),
-                  '6' =>  Article::uploadImg('article_pmt6'),
-                ];
-
-            Article::create(array_merge($request->except(['article_picture','article_pmt']),['article_picture'=>Article::uploadImg('article_picture'),'article_pmt'=>$newArray]));
+            Article::create(array_merge($request->except(['article_picture']),['article_picture'=>Article::uploadImg('article_picture')]));
 
             return back()->with('message','1');
 
@@ -366,16 +357,16 @@ class UserController extends Controller
 
             if ($request->get('password') == $request->get('fixed_password')) {
 
-                    $data = User::where('user_phone',$request->get('user_phone'))->first();
-                    if ($data){
+                $data = User::where('user_phone',$request->get('user_phone'))->first();
+                if ($data){
 
-                        User::where('user_id',$data['user_id'])->update(['password'=>bcrypt($request->get('password'))]);
+                    User::where('user_id',$data['user_id'])->update(['password'=>bcrypt($request->get('password'))]);
 
-                        return redirect('/user-login')->with('message','6');
+                    return redirect('/user-login')->with('message','6');
 
-                    }else{
-                        return redirect('/seek-password')->with('message','4');
-                    }
+                }else{
+                    return redirect('/seek-password')->with('message','4');
+                }
 
             }else{
 
