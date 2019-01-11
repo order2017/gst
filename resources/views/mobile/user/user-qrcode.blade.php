@@ -33,7 +33,10 @@
                             <section>
                                 <h3>温馨提示：</h3>
                                 <p>
-                                    扫码付款成功，请联系广商通商业共享运营中心，及时开通会员权限 联系方式：<small style="color: red; font-size: 16px;">13823771801</small> 周生
+                                    会员充值最低：10元
+                                </p>
+                                <p>
+                                    扫码付款成功，请联系广商通商业共享运营中心，及时开通会员权限 联系方式：<small style="color: red; font-size: 16px;">13823171801</small> 周生
                                 </p>
                             </section>
                         </article>
