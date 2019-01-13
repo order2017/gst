@@ -45,8 +45,6 @@
 								<p onclick="javascript:window.location='{{ url('/user-login')}}'">我注册会员，我发信息。连接会员中心。</p>
                                 <br>
                                 24小时客服电话:13823171801周生。
-                                <br>
-                                深圳市网络招商电话：13823171801<br> 广州市网络招商电话：18824181801
                             </section>
                         </section>
                     </article>

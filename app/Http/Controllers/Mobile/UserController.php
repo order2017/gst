@@ -272,9 +272,9 @@ class UserController extends Controller
             }elseif($request->get('article_type')==4){ // 发布商业招商信息奖励十元一条，
                 User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']+1)]);
             }elseif($request->get('article_type')==5){ // 发布商场买卖信息收费五十元一条
-                User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-10)]);
+                User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-1)]);
             }elseif($request->get('article_type')==6){ // 发布商业买卖信息收费五十元一条
-                User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-10)]);
+                User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']-1)]);
             }elseif($request->get('article_type')==7){ // 发布设备买卖信息奖励十元一条，
                 User::where('user_id',$data['user_id'])->update(['user_money'=>($data['user_money']+1)]);
             }elseif($request->get('article_type')==8){ // 发布品牌拓展信息奖励十元一条，

@@ -43,15 +43,15 @@
                                         <?php
 
                                         if($_GET['type_id']==3){ // 看商场招商信息收费10元一次，
-                                            \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-10)]);
+                                            \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-1)]);
                                         }elseif($_GET['type_id']==4){ // 看商业招商信息收费10元一次，
-                                            \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-10)]);
+                                            \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-1)]);
                                         }elseif($_GET['type_id']==8){ //看品牌拓展信息收费十元一次，
-                                            \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-10)]);
+                                            \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-1)]);
                                         }elseif($_GET['type_id']==5){ //看商场买卖信息收费五十元一次
-                                            \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-50)]);
+                                            \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-1)]);
                                         }elseif($_GET['type_id']==6){ //看商业买卖信息收费五十元一次。
-                                            \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-50)]);
+                                            \App\User::where('user_id',$userData['user_id'])->update(['user_money'=>($userData['user_money']-1)]);
                                         }elseif($_GET['type_id']==7){ //免费看
 
                                         }else{
