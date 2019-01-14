@@ -38,7 +38,7 @@
                                     <?php
                                     $userData = \App\User::where('user_id',session()->get('mobile_user')['user_id'])->first();
                                     ?>
-                                    @if($userData['user_money']>=50)
+                                    @if($userData['user_money']>=1)
 
                                         <?php
 
