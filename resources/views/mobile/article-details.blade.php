@@ -112,7 +112,7 @@
                                     @else
                                         <?php goEnd: ?>
                                         <div class="weui_cells_title" style="color:green;" onclick="javascript:window.location='/user-index'">我来发信息~(免费发布，免费推广，还有红包拿)</div>
-                                        <div class="weui_cells_title" style="color:red;" onclick="javascript:window.location='/user-qrcode'">您的余额低于100元，请充值 、立即查看联系咨询服务！</div>
+                                        <div class="weui_cells_title" style="color:red;" onclick="javascript:window.location='/user-qrcode'">充值1元 、立即查看联系咨询服务！</div>
                                     @endif
                                 @else
                                     <div class="weui_cells_title" style="color:green;" onclick="javascript:window.location='/user-login'">我来发信息~(免费发布，免费推广，还有红包拿)</div>
