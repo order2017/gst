@@ -255,6 +255,22 @@ class UserController extends Controller
     }
 
     /**
+     * 用户发布
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function userPushVideo() {
+
+        $data = User::where('user_id',session('mobile_user')['user_id'])->first();
+
+        /* if ($data['user_money']=="0"){
+             return redirect('/user-qrcode')->with('message','4');
+         }else{*/
+        return view('mobile.user.user-push-video',['data'=>$this->TypeList()]);
+        // }
+
+    }
+
+    /**
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */

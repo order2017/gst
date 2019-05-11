@@ -57,8 +57,9 @@
                                                 </div>
 
                                                 <div class="weui_uploader_hd weui_cell">
-                                                    <div class="weui_cell_bd weui_cell_primary">上传图片：</div>
+                                                    <div class="weui_cell_bd weui_cell_primary">上传视频：</div>
                                                 </div>
+
                                                 <div class="weui_uploader_bd">
                                                     <ul class="weui_uploader_files">
                                                         <li class="weui_uploader_file">

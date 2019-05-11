@@ -89,6 +89,9 @@ Route::group(['namespace' => 'Mobile'],function (){
         Route::get('/user-push','UserController@userPush');
         Route::post('/user-push','UserController@userPushStore');
 
+        // 用户发布视频
+        Route::get('/user-push-video','UserController@userPushVideo');
+
         // 用户退出
         Route::get('/logout', 'UserController@logout');
 
