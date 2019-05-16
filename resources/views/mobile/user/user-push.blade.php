@@ -36,7 +36,7 @@
                                         </div>
                                     </div>
 
-                                    {{----}}
+                                    {{----}}{{--
                                     <div class="weui_cell">
                                         <div class="weui_cell_bd weui_cell_primary">
                                             <div class="weui_uploader">
@@ -57,7 +57,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{----}}
+                                    --}}{{----}}
 
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">联系人：</label></div>
