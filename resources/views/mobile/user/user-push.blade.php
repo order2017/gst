@@ -40,24 +40,8 @@
                                     <div class="weui_cell">
                                         <div class="weui_cell_bd weui_cell_primary">
                                             <div class="weui_uploader">
-
-                                                <div class="navbar">
-                                                    <div class="bd" style="height: 100%;">
-                                                        <div class="weui_tab">
-                                                            <div class="weui_navbar" style="position: initial;">
-                                                                <div class="weui_navbar_item" onclick="javascript:window.location='/user-push'">
-                                                                    上传图片
-                                                                </div>
-                                                                <div class="weui_navbar_item" onclick="javascript:window.location='/user-push-video'">
-                                                                    上传视频
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
                                                 <div class="weui_uploader_hd weui_cell">
-                                                    <div class="weui_cell_bd weui_cell_primary">上传图片：</div>
+                                                    <div class="weui_cell_bd weui_cell_primary">封面图片：</div>
                                                 </div>
                                                 <div class="weui_uploader_bd">
                                                     <ul class="weui_uploader_files">
@@ -74,6 +58,7 @@
                                         </div>
                                     </div>
                                     {{----}}
+
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">联系人：</label></div>
                                         <div class="weui_cell_bd weui_cell_primary">
@@ -115,7 +100,8 @@
                                     <div class="weui_cells weui_cells_form">
                                         <div class="weui_cell">
                                             <div class="weui_cell_bd weui_cell_primary">
-                                                <textarea class="weui_textarea" name="article_content" placeholder="请输入内容" rows="5" required></textarea>
+                                                {{--<textarea class="weui_textarea" name="article_content" placeholder="请输入内容" rows="5" required></textarea>--}}
+                                                <script id="contents" name="article_content" type="text/plain"></script>
                                             </div>
                                         </div>
                                     </div>
@@ -193,6 +179,14 @@
 @endsection
 
 @section('script')
+    @include('vendor.ueditor.assets')
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var ue = UE.getEditor('contents');
+        ue.ready(function() {
+            ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
+        });
+    </script>
 
     <script>
         function imgPreview(fileDom,src){
