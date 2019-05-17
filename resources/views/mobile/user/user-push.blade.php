@@ -107,9 +107,9 @@
                                     </div>
 
                                     <div class="weui_cell">
-                                        <div class="weui_cell_hd"><label class="weui_label">商圈：</label></div>
+                                        <div class="weui_cell_hd"><label class="weui_label">招商内容：</label></div>
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <input class="weui_input" type="text" name="article_sq" placeholder="请输入商圈" required>
+                                            <input class="weui_input" type="text" name="article_sq" placeholder="请输入招商内容" required>
                                         </div>
                                     </div>
 
