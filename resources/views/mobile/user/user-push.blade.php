@@ -48,13 +48,14 @@
                                         </div>
                                     </div>
 
-                                    {{----}}{{--
+                                    {{----}}
                                     <div class="weui_cell">
                                         <div class="weui_cell_bd weui_cell_primary">
                                             <div class="weui_uploader">
                                                 <div class="weui_uploader_hd weui_cell">
-                                                    <div class="weui_cell_bd weui_cell_primary">封面图片：</div>
+                                                    <div class="weui_cell_bd weui_cell_primary">上传封面图：</div>
                                                 </div>
+
                                                 <div class="weui_uploader_bd">
                                                     <ul class="weui_uploader_files">
                                                         <li class="weui_uploader_file">
@@ -69,7 +70,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                    --}}{{----}}
+                                    {{----}}
+
+                                    <hr>
+
+                                    <div class="weui_cells_title" style="font-size: 16px; color: black;">上传多张图片及视频：</div>
+                                    <div class="weui_cells weui_cells_form">
+                                        <div class="weui_cell">
+                                            <div class="weui_cell_bd weui_cell_primary">
+                                                <script id="contents" name="article_all" type="text/plain"></script>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">联系人：</label></div>
@@ -112,16 +124,15 @@
                                     <div class="weui_cells weui_cells_form">
                                         <div class="weui_cell">
                                             <div class="weui_cell_bd weui_cell_primary">
-                                                {{--<textarea class="weui_textarea" name="article_content" placeholder="请输入内容" rows="5" required></textarea>--}}
-                                                <script id="contents" name="article_content" type="text/plain"></script>
+                                                <textarea class="weui_textarea" name="article_content" placeholder="请输入内容" rows="5" required></textarea>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="weui_cell">
-                                        <div class="weui_cell_hd"><label class="weui_label">招商内容：</label></div>
+                                        <div class="weui_cell_hd"><label class="weui_label">商圈：</label></div>
                                         <div class="weui_cell_bd weui_cell_primary">
-                                            <input class="weui_input" type="text" name="article_sq" placeholder="请输入招商内容" required>
+                                            <input class="weui_input" type="text" name="article_sq" placeholder="请输入商圈" required>
                                         </div>
                                     </div>
 
@@ -131,27 +142,6 @@
                                             <input class="weui_input" type="text" name="article_mj" placeholder="请输入面积" required>
                                         </div>
                                     </div>
-
-                                    {{--<div class="weui_cell">
-                                        <div class="weui_cell_bd weui_cell_primary">
-                                            <div class="weui_uploader">
-                                                <div class="weui_uploader_hd weui_cell">
-                                                    <div class="weui_cell_bd weui_cell_primary">平面图片：</div>
-                                                </div>
-                                                <div class="weui_uploader_bd">
-                                                    <ul class="weui_uploader_files">
-                                                        <li class="weui_uploader_file">
-                                                            <img id="article_pmt" class="weui_uploader_file" src="{{ asset('/uploads/gst_logo.png') }}" >
-                                                        </li>
-                                                    </ul>
-                                                    <div class="weui_uploader_input_wrp">
-                                                        <input class="weui_uploader_input" name="article_pmt" id="file" type="file" accept="image/*" multiple onchange="imgPreview(this,'article_pmt')">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>--}}
 
                                     <div class="weui_cell">
                                         <div class="weui_cell_hd"><label class="weui_label">地址：</label></div>

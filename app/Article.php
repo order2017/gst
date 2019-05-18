@@ -26,6 +26,7 @@ class Article extends Model
         'article_sq',
         'article_mj',
         'article_pmt',
+        'article_all',
     ];
 
     /**

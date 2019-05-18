@@ -300,7 +300,6 @@ class UserController extends Controller
             }
 
             // }
-
             Article::create(array_merge($request->except(['article_picture']),['article_picture'=>Article::uploadImg('article_picture')]));
 
             return back()->with('message','1');

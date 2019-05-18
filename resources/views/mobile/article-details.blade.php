@@ -79,9 +79,13 @@
                                             </a>
                                             <a class="weui_cell" href="javascript:;">
                                                 <div class="weui_cell_bd weui_cell_primary">
-                                                    <p style="color:red; margin: 0;">招商内容：{{ $data['article_sq'] }}</p>
+                                                    <p style="color:red; margin: 0;">商圈：{{ $data['article_sq'] }}</p>
                                                 </div>
                                             </a>
+                                            <hr>
+                                            <section class="article_content">
+                                                {!! $data['article_all'] !!}
+                                            </section>
                                             <a class="weui_cell" href="javascript:;">
                                                 <div class="weui_cell_bd weui_cell_primary">
                                                     <p style="color:green; margin: 0;">项目招商</p>
