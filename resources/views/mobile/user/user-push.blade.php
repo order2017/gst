@@ -11,6 +11,18 @@
             font-size: 23px;
             color:#3cc51f;
         }
+        #edui11_body{
+            width: 320px !important;
+        }
+        #edui11_content{
+            width: 320px !important;
+        }
+        #edui4_body{
+            width: 320px !important;
+        }
+        #edui4_content{
+            width: 320px !important;
+        }
     </style>
 @endsection
 
