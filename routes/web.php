@@ -64,6 +64,20 @@ Route::group(['namespace' => 'Mobile'],function (){
     Route::get('/shop-contract-two','ContractController@shopContractTwo');
     Route::post('/shop-contract-two','ContractController@shopContractTwoStore');
 
+    // 商场招商协议书
+    Route::get('/download-xieyishu', function () {
+        $files = base_path('./public/uploads/zhaoshanxieyishu.docx');
+        $name = basename($files);
+        return response()->download($files, $name ,$headers = ['Content-Type'=>'application/zip;charset=utf-8']);
+    });
+
+    // 商场招商意向书
+    Route::get('/download-yixiangshu', function () {
+        $files = base_path('./public/uploads/zhaoshanyixiangshu.xls');
+        $name = basename($files);
+        return response()->download($files, $name ,$headers = ['Content-Type'=>'application/zip;charset=utf-8']);
+    });
+
     // 签约二维码
     Route::get('/shop-qrcode','ContractController@shopQrcode');
 

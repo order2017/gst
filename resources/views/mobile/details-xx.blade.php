@@ -45,6 +45,15 @@
 								<p onclick="javascript:window.location='{{ url('/user-login')}}'">我注册会员，我发信息。连接会员中心。</p>
                                 <br>
                                 24小时客服电话:13823171801周生。
+                                <br>
+                                <br>
+                                网络招商合同下载
+                                <br>
+                                <br>
+                                <a href="{{ url('/download-xieyishu') }}">招商协议书下载</a>
+                                <br>
+                                <br>
+                                <a href="{{ url('/download-yixiangshu') }}">招商意向书下载</a>
                             </section>
                         </section>
                     </article>

@@ -163,6 +163,26 @@
                                             {{----}}
                                         </div>
                                     </div>
+                                    <div class="weui_cell">
+                                        <div class="weui_cell_hd"><label class="weui_label">招商合同：</label></div>
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            {{----}}
+                                            <div class="am-form-group am-input-group" id="address2">
+                                                <input type="text" class="weui_input" name="" placeholder="请输入网络招商合同" required>
+                                            </div>
+                                            {{----}}
+                                        </div>
+                                    </div>
+                                    <div class="weui_cell">
+                                        <div class="weui_cell_hd"><label class="weui_label">意向书：</label></div>
+                                        <div class="weui_cell_bd weui_cell_primary">
+                                            {{----}}
+                                            <div class="am-form-group am-input-group" id="address2">
+                                                <input type="text" class="weui_input" name="" placeholder="请输入招商意向书" required>
+                                            </div>
+                                            {{----}}
+                                        </div>
+                                    </div>
 
                                 </div>
                                 <div class="weui_btn_area">

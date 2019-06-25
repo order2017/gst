@@ -61,33 +61,6 @@
 
                                 </div>
 
-                                <div class="weui_cells_title">商场定位</div>
-
-                                <div class="weui_cells weui_cells_form">
-                                    <div class="weui_cell">
-                                        <div class="weui_cell_hd">方位：@if($contract['sc_fw']=="1") 否 @else 是 @endif</div>
-                                    </div>
-
-                                    <div class="weui_cell">
-                                        <div class="weui_cell_hd">商业中心：@if($contract['sc_syzx']=="1") 否 @else 是 @endif</div>
-                                    </div>
-
-                                    <div class="weui_cell">
-                                        <div class="weui_cell_hd">社区：@if($contract['sc_sq']=="1") 否 @else 是 @endif</div>
-                                    </div>
-
-                                    <div class="weui_cell">
-                                        <div class="weui_cell_hd">城郊结合部-档次：@if($contract['sc_cjdc']=="1") 高 @elseif($contract['sc_cjdc']=="2") 中 @else 低 @endif</div>
-                                    </div>
-
-                                    <div class="weui_cell">
-                                        <div class="weui_cell_bd weui_cell_primary">
-                                            具体描述：{{ $contract['sc_jtms'] }}
-                                        </div>
-                                    </div>
-
-                                </div>
-
                                 <div class="weui_cells_title">主要合同内容</div>
                                 <div class="weui_cells weui_cells_form">
 

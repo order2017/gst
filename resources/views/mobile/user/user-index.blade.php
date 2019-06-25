@@ -40,7 +40,7 @@
                             </label>
                         </div>
 
-                        @if(empty($contract->user_id))
+                        {{--@if(empty($contract->user_id))
                         <div class="weui_cells weui_cells_access">
                             <a class="weui_cell" href="/user-contract">
                                 <div class="weui_cell_bd weui_cell_primary">
@@ -62,7 +62,8 @@
                                     </div>
                                 </a>
                             </div>
-                        @endif
+                        @endif--}}
+
 
                         <div class="weui_panel weui_panel_access">
 
