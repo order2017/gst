@@ -1,7 +1,20 @@
 <div class="home">
-    <div class="hd">
-        <h1 class="page_title">广商通商业共享</h1>
-        <p class="page_desc" style="color:red;">共享-商业-商品-服务-金融</p>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active" onclick="javascript:window.location='https://docs.qq.com/doc/DVlhTWHhIQnF3bXlU'">
+                <img style="width:100%; height:130px" src="{{ asset('/uploads/sc01.png') }}" alt="">
+            </div>
+            <div class="item" onclick="javascript:window.location='https://docs.qq.com/doc/DVk5WdE1RZEdkUUFI'">
+                <img style="width:100%; height:130px" src="{{ asset('/uploads/sc02.png') }}" alt="">
+            </div>
+        </div>
     </div>
     <div class="bd">
         <div class="weui_cells_title">共享商超</div>
