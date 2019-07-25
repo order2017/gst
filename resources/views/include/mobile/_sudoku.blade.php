@@ -4,15 +4,31 @@
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="5"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active" onclick="javascript:window.location='https://docs.qq.com/doc/DVlhTWHhIQnF3bXlU'">
-                <img style="width:100%; height:130px" src="{{ asset('/uploads/sc01.png') }}" alt="">
+                <img style="width:100%; height:130px" src="{{ asset('/uploads/01.png') }}" alt="">
             </div>
             <div class="item" onclick="javascript:window.location='https://docs.qq.com/doc/DVk5WdE1RZEdkUUFI'">
-                <img style="width:100%; height:130px" src="{{ asset('/uploads/sc02.png') }}" alt="">
+                <img style="width:100%; height:130px" src="{{ asset('/uploads/02.png') }}" alt="">
+            </div>
+            <div class="item" onclick="javascript:window.location='https://docs.qq.com/doc/DVk5WdE1RZEdkUUFI'">
+                <img style="width:100%; height:130px" src="{{ asset('/uploads/03.png') }}" alt="">
+            </div>
+            <div class="item" onclick="javascript:window.location='https://docs.qq.com/doc/DVk5WdE1RZEdkUUFI'">
+                <img style="width:100%; height:130px" src="{{ asset('/uploads/04.png') }}" alt="">
+            </div>
+            <div class="item" onclick="javascript:window.location='https://docs.qq.com/doc/DVk5WdE1RZEdkUUFI'">
+                <img style="width:100%; height:130px" src="{{ asset('/uploads/05.png') }}" alt="">
+            </div>
+            <div class="item" onclick="javascript:window.location='https://docs.qq.com/doc/DVk5WdE1RZEdkUUFI'">
+                <img style="width:100%; height:130px" src="{{ asset('/uploads/06.png') }}" alt="">
             </div>
         </div>
     </div>
