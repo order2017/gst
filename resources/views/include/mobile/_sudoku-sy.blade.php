@@ -12,7 +12,7 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active" onclick="javascript:window.location='https://docs.qq.com/doc/DVlhTWHhIQnF3bXlU'">
+            <div class="item active" onclick="javascript:window.location='https://docs.qq.com/doc/DVk5WdE1RZEdkUUFI'">
                 <img style="width:100%; height:130px" src="{{ asset('/uploads/01.png') }}" alt="">
             </div>
             <div class="item" onclick="javascript:window.location='https://docs.qq.com/doc/DVk5WdE1RZEdkUUFI'">
