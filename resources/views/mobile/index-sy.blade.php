@@ -14,6 +14,9 @@
             padding-right: 0px !important;
             padding-left: 0px !important; //361128200710041124
         }
+        .carousel-indicators {
+            bottom: -13px !important;
+        }
     </style>
 @endsection
 

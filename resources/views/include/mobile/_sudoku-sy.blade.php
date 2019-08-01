@@ -24,10 +24,10 @@
             <div class="item" onclick="javascript:window.location='https://docs.qq.com/doc/DVk5WdE1RZEdkUUFI'">
                 <img style="width:100%; height:130px" src="{{ asset('/uploads/04.png') }}" alt="">
             </div>
-            <div class="item" onclick="javascript:window.location='https://docs.qq.com/doc/DVk5WdE1RZEdkUUFI'">
+            <div class="item">
                 <img style="width:100%; height:130px" src="{{ asset('/uploads/05.png') }}" alt="">
             </div>
-            <div class="item" onclick="javascript:window.location='https://docs.qq.com/doc/DVk5WdE1RZEdkUUFI'">
+            <div class="item">
                 <img style="width:100%; height:130px" src="{{ asset('/uploads/06.png') }}" alt="">
             </div>
         </div>
